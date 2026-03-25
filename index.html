@@ -1,0 +1,620 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Supply — Fábrica própria de EPIs e Fardamentos Profissionais. Qualidade, prazo e consultoria técnica para sua operação. Feira de Santana - BA.">
+  <meta property="og:title" content="Supply — EPIs e Fardamentos que Protegem de Verdade">
+  <meta property="og:description" content="Fábrica própria. Controle total. Do tecido à entrega, cada peça é feita para quem não pode parar.">
+  <meta property="og:type" content="website">
+  <title>Supply — EPIs e Fardamentos Profissionais</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            supply: {
+              50: '#fff7ed',
+              100: '#ffedd5',
+              200: '#fed7aa',
+              300: '#fdba74',
+              400: '#fb923c',
+              500: '#f97316',
+              600: '#ea580c',
+              700: '#c2410c',
+              800: '#9a3412',
+              900: '#7c2d12',
+              950: '#431407',
+            },
+            dark: {
+              50: '#f8fafc',
+              100: '#f1f5f9',
+              200: '#e2e8f0',
+              300: '#cbd5e1',
+              400: '#94a3b8',
+              500: '#64748b',
+              600: '#475569',
+              700: '#334155',
+              800: '#1e293b',
+              900: '#0f172a',
+              950: '#020617',
+            }
+          },
+          fontFamily: {
+            display: ['Bebas Neue', 'sans-serif'],
+            body: ['Inter', 'sans-serif'],
+            mono: ['JetBrains Mono', 'monospace'],
+          },
+          fontSize: {
+            'display-xl': ['8rem', { lineHeight: '0.9', letterSpacing: '-0.02em' }],
+            'display-lg': ['6rem', { lineHeight: '0.9', letterSpacing: '-0.02em' }],
+            'display-md': ['4.5rem', { lineHeight: '0.95', letterSpacing: '-0.01em' }],
+            'display-sm': ['3rem', { lineHeight: '1', letterSpacing: '-0.01em' }],
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    [data-animate] { opacity: 0; }
+
+    /* Marquee */
+    @keyframes marquee {
+      from { transform: translateX(0); }
+      to { transform: translateX(-50%); }
+    }
+    .marquee-track {
+      animation: marquee 30s linear infinite;
+    }
+    .marquee-track-reverse {
+      animation: marquee 25s linear infinite reverse;
+    }
+
+    /* Grain texture overlay */
+    .grain::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    /* Scroll indicator bounce */
+    @keyframes bounce-scroll {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(8px); }
+    }
+    .scroll-bounce { animation: bounce-scroll 2s ease-in-out infinite; }
+
+    /* Selection */
+    ::selection { background: #f97316; color: white; }
+  </style>
+</head>
+<body class="bg-dark-950 text-white font-body antialiased overflow-x-hidden">
+
+  <!-- ============================================ -->
+  <!-- NAV -->
+  <!-- ============================================ -->
+  <nav class="fixed top-0 w-full z-50 transition-all duration-500" id="navbar">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8">
+      <div class="flex items-center justify-between h-20">
+        <!-- Logo -->
+        <a href="#" class="flex items-center gap-3 group">
+          <div class="w-10 h-10 bg-supply-500 rounded-lg flex items-center justify-center font-display text-2xl text-white group-hover:scale-110 transition-transform duration-300">S</div>
+          <div>
+            <span class="font-display text-2xl tracking-wide text-white">SUPPLY</span>
+            <span class="block text-[10px] font-mono uppercase tracking-[0.2em] text-dark-400 -mt-1">EPIs & Fardamentos</span>
+          </div>
+        </a>
+
+        <!-- Nav Links (Desktop) -->
+        <div class="hidden md:flex items-center gap-8">
+          <a href="#setores" class="text-sm text-dark-300 hover:text-white transition-colors duration-300">Setores</a>
+          <a href="#diferenciais" class="text-sm text-dark-300 hover:text-white transition-colors duration-300">Diferenciais</a>
+          <a href="#processo" class="text-sm text-dark-300 hover:text-white transition-colors duration-300">Processo</a>
+          <a href="#contato" class="text-sm text-dark-300 hover:text-white transition-colors duration-300">Contato</a>
+          <a href="https://wa.me/557534712333" target="_blank" class="bg-supply-500 hover:bg-supply-600 text-white text-sm font-medium px-5 py-2.5 rounded-lg transition-all duration-300 hover:shadow-lg hover:shadow-supply-500/25 active:scale-95">
+            Solicitar Orçamento
+          </a>
+        </div>
+
+        <!-- Mobile Menu Button -->
+        <button id="mobile-toggle" class="md:hidden text-white p-2" onclick="document.getElementById('mobile-menu').classList.toggle('hidden')">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="hidden md:hidden bg-dark-900/95 backdrop-blur-xl border-t border-white/5">
+      <div class="px-6 py-6 space-y-4">
+        <a href="#setores" class="block text-dark-200 hover:text-white">Setores</a>
+        <a href="#diferenciais" class="block text-dark-200 hover:text-white">Diferenciais</a>
+        <a href="#processo" class="block text-dark-200 hover:text-white">Processo</a>
+        <a href="#contato" class="block text-dark-200 hover:text-white">Contato</a>
+        <a href="https://wa.me/557534712333" target="_blank" class="block bg-supply-500 text-white text-center py-3 rounded-lg font-medium">Solicitar Orçamento</a>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+
+    <!-- ============================================ -->
+    <!-- HERO -->
+    <!-- ============================================ -->
+    <section class="relative min-h-screen flex items-center justify-center grain overflow-hidden">
+      <!-- Background gradient -->
+      <div class="absolute inset-0 bg-gradient-to-b from-dark-950 via-dark-900 to-dark-950"></div>
+      <!-- Accent glow -->
+      <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-supply-500/5 rounded-full blur-3xl"></div>
+
+      <div class="relative z-10 max-w-7xl mx-auto px-6 lg:px-8 text-center">
+        <!-- Label -->
+        <p data-animate class="font-mono text-xs uppercase tracking-[0.3em] text-supply-400 mb-6">
+          Fábrica própria · Feira de Santana — BA
+        </p>
+
+        <!-- Heading -->
+        <h1 class="font-display">
+          <span data-animate class="block text-display-md md:text-display-lg lg:text-display-xl text-white">PROTEGER</span>
+          <span data-animate class="block text-display-md md:text-display-lg lg:text-display-xl text-dark-500">QUEM FAZ</span>
+          <span data-animate class="block text-display-md md:text-display-lg lg:text-display-xl text-supply-500">ACONTECER</span>
+        </h1>
+
+        <!-- Subtext -->
+        <p data-animate class="mt-8 text-lg md:text-xl text-dark-300 max-w-2xl mx-auto leading-relaxed">
+          Do tecido à entrega. Cada fardamento e EPI é fabricado com controle total
+          para quem não pode parar.
+        </p>
+
+        <!-- CTA -->
+        <div data-animate class="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
+          <a href="https://wa.me/557534712333" target="_blank" class="bg-supply-500 hover:bg-supply-600 text-white font-medium px-8 py-4 rounded-lg text-lg transition-all duration-300 hover:shadow-xl hover:shadow-supply-500/20 active:scale-95">
+            Falar com Especialista
+          </a>
+          <a href="#setores" class="text-dark-300 hover:text-white font-medium px-8 py-4 transition-colors duration-300 flex items-center gap-2">
+            Explorar Setores
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </a>
+        </div>
+
+        <!-- Scroll indicator -->
+        <div data-animate class="absolute bottom-12 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 scroll-bounce">
+          <span class="text-[10px] font-mono uppercase tracking-[0.2em] text-dark-500">Scroll</span>
+          <svg class="w-5 h-5 text-dark-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 14l-7 7m0 0l-7-7m7 7V3"/></svg>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================ -->
+    <!-- STATEMENT -->
+    <!-- ============================================ -->
+    <section class="relative py-32 md:py-40 overflow-hidden">
+      <div class="max-w-5xl mx-auto px-6 lg:px-8 text-center">
+        <p data-animate class="font-display text-display-sm md:text-display-md lg:text-display-lg text-dark-600 leading-none">
+          EPI não é
+          <span class="text-white">custo</span>.
+        </p>
+        <p data-animate class="font-display text-display-sm md:text-display-md lg:text-display-lg text-dark-600 leading-none mt-2">
+          É
+          <span class="text-supply-500">compromisso</span>
+          com quem
+        </p>
+        <p data-animate class="font-display text-display-sm md:text-display-md lg:text-display-lg text-dark-600 leading-none mt-2">
+          volta pra casa todo dia.
+        </p>
+      </div>
+    </section>
+
+    <!-- ============================================ -->
+    <!-- SETORES -->
+    <!-- ============================================ -->
+    <section id="setores" class="relative py-24 md:py-32">
+      <div class="max-w-7xl mx-auto px-6 lg:px-8">
+
+        <!-- Section header -->
+        <div class="mb-16" data-animate>
+          <p class="font-mono text-xs uppercase tracking-[0.2em] text-supply-400 mb-4">Setores de Atuação</p>
+          <h2 class="font-display text-display-sm md:text-display-md text-white">ONDE ATUAMOS</h2>
+          <p class="mt-4 text-dark-400 max-w-xl text-lg">Da linha de produção ao canteiro de obra. Cada setor exige soluções específicas — e é assim que trabalhamos.</p>
+        </div>
+
+        <!-- Sectors Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-px bg-white/5 rounded-2xl overflow-hidden">
+
+          <!-- Sector 1 -->
+          <div data-animate class="group relative bg-dark-900 p-8 md:p-10 hover:bg-dark-800 transition-all duration-500 cursor-pointer">
+            <div class="flex items-start justify-between mb-6">
+              <span class="font-mono text-xs text-dark-500 tracking-wider">01</span>
+              <svg class="w-5 h-5 text-dark-600 group-hover:text-supply-500 group-hover:translate-x-1 group-hover:-translate-y-1 transition-all duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+            </div>
+            <h3 class="font-display text-3xl md:text-4xl text-white mb-3 group-hover:text-supply-400 transition-colors">INDÚSTRIA</h3>
+            <p class="text-dark-400 leading-relaxed">Brim pesado, proteção contra arco elétrico (NR10) e uniformes que aguentam o ritmo de chão de fábrica.</p>
+            <div class="mt-6 h-px bg-gradient-to-r from-supply-500/50 to-transparent w-0 group-hover:w-full transition-all duration-700"></div>
+          </div>
+
+          <!-- Sector 2 -->
+          <div data-animate class="group relative bg-dark-900 p-8 md:p-10 hover:bg-dark-800 transition-all duration-500 cursor-pointer">
+            <div class="flex items-start justify-between mb-6">
+              <span class="font-mono text-xs text-dark-500 tracking-wider">02</span>
+              <svg class="w-5 h-5 text-dark-600 group-hover:text-supply-500 group-hover:translate-x-1 group-hover:-translate-y-1 transition-all duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+            </div>
+            <h3 class="font-display text-3xl md:text-4xl text-white mb-3 group-hover:text-supply-400 transition-colors">ESCRITÓRIO</h3>
+            <p class="text-dark-400 leading-relaxed">Camisas polo e uniformes sociais que carregam identidade visual com elegância e conforto térmico.</p>
+            <div class="mt-6 h-px bg-gradient-to-r from-supply-500/50 to-transparent w-0 group-hover:w-full transition-all duration-700"></div>
+          </div>
+
+          <!-- Sector 3 -->
+          <div data-animate class="group relative bg-dark-900 p-8 md:p-10 hover:bg-dark-800 transition-all duration-500 cursor-pointer">
+            <div class="flex items-start justify-between mb-6">
+              <span class="font-mono text-xs text-dark-500 tracking-wider">03</span>
+              <svg class="w-5 h-5 text-dark-600 group-hover:text-supply-500 group-hover:translate-x-1 group-hover:-translate-y-1 transition-all duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+            </div>
+            <h3 class="font-display text-3xl md:text-4xl text-white mb-3 group-hover:text-supply-400 transition-colors">SAÚDE</h3>
+            <p class="text-dark-400 leading-relaxed">Jalecos e scrubs com tecidos especiais focados em assepsia, durabilidade e conforto em longas jornadas.</p>
+            <div class="mt-6 h-px bg-gradient-to-r from-supply-500/50 to-transparent w-0 group-hover:w-full transition-all duration-700"></div>
+          </div>
+
+          <!-- Sector 4 -->
+          <div data-animate class="group relative bg-dark-900 p-8 md:p-10 hover:bg-dark-800 transition-all duration-500 cursor-pointer">
+            <div class="flex items-start justify-between mb-6">
+              <span class="font-mono text-xs text-dark-500 tracking-wider">04</span>
+              <svg class="w-5 h-5 text-dark-600 group-hover:text-supply-500 group-hover:translate-x-1 group-hover:-translate-y-1 transition-all duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+            </div>
+            <h3 class="font-display text-3xl md:text-4xl text-white mb-3 group-hover:text-supply-400 transition-colors">CONSTRUÇÃO</h3>
+            <p class="text-dark-400 leading-relaxed">Proteção reforçada e fardamentos para canteiros de obra. Resistência que acompanha o peso da operação.</p>
+            <div class="mt-6 h-px bg-gradient-to-r from-supply-500/50 to-transparent w-0 group-hover:w-full transition-all duration-700"></div>
+          </div>
+
+          <!-- Sector 5 -->
+          <div data-animate class="group relative bg-dark-900 p-8 md:p-10 hover:bg-dark-800 transition-all duration-500 cursor-pointer">
+            <div class="flex items-start justify-between mb-6">
+              <span class="font-mono text-xs text-dark-500 tracking-wider">05</span>
+              <svg class="w-5 h-5 text-dark-600 group-hover:text-supply-500 group-hover:translate-x-1 group-hover:-translate-y-1 transition-all duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+            </div>
+            <h3 class="font-display text-3xl md:text-4xl text-white mb-3 group-hover:text-supply-400 transition-colors">AGRONEGÓCIO</h3>
+            <p class="text-dark-400 leading-relaxed">Resistência para o campo, fazendas e longa exposição solar. Tecidos que respiram e protegem ao mesmo tempo.</p>
+            <div class="mt-6 h-px bg-gradient-to-r from-supply-500/50 to-transparent w-0 group-hover:w-full transition-all duration-700"></div>
+          </div>
+
+          <!-- Sector 6 -->
+          <div data-animate class="group relative bg-dark-900 p-8 md:p-10 hover:bg-dark-800 transition-all duration-500 cursor-pointer">
+            <div class="flex items-start justify-between mb-6">
+              <span class="font-mono text-xs text-dark-500 tracking-wider">06</span>
+              <svg class="w-5 h-5 text-dark-600 group-hover:text-supply-500 group-hover:translate-x-1 group-hover:-translate-y-1 transition-all duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+            </div>
+            <h3 class="font-display text-3xl md:text-4xl text-white mb-3 group-hover:text-supply-400 transition-colors">EPIs</h3>
+            <p class="text-dark-400 leading-relaxed">Linha completa de equipamentos de proteção individual. Fornecedores homologados, entrega no prazo.</p>
+            <div class="mt-6 h-px bg-gradient-to-r from-supply-500/50 to-transparent w-0 group-hover:w-full transition-all duration-700"></div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================ -->
+    <!-- MARQUEE STRIP -->
+    <!-- ============================================ -->
+    <section class="py-12 border-y border-white/5 overflow-hidden">
+      <div class="marquee-track flex whitespace-nowrap gap-8">
+        <span class="font-display text-5xl md:text-7xl text-dark-800 px-4">QUALIDADE</span>
+        <span class="text-supply-500 text-5xl md:text-7xl">·</span>
+        <span class="font-display text-5xl md:text-7xl text-dark-800 px-4">PROTEÇÃO</span>
+        <span class="text-supply-500 text-5xl md:text-7xl">·</span>
+        <span class="font-display text-5xl md:text-7xl text-dark-800 px-4">CONFIANÇA</span>
+        <span class="text-supply-500 text-5xl md:text-7xl">·</span>
+        <span class="font-display text-5xl md:text-7xl text-dark-800 px-4">PRAZO</span>
+        <span class="text-supply-500 text-5xl md:text-7xl">·</span>
+        <span class="font-display text-5xl md:text-7xl text-dark-800 px-4">FÁBRICA PRÓPRIA</span>
+        <span class="text-supply-500 text-5xl md:text-7xl">·</span>
+        <!-- Duplicate for seamless loop -->
+        <span class="font-display text-5xl md:text-7xl text-dark-800 px-4">QUALIDADE</span>
+        <span class="text-supply-500 text-5xl md:text-7xl">·</span>
+        <span class="font-display text-5xl md:text-7xl text-dark-800 px-4">PROTEÇÃO</span>
+        <span class="text-supply-500 text-5xl md:text-7xl">·</span>
+        <span class="font-display text-5xl md:text-7xl text-dark-800 px-4">CONFIANÇA</span>
+        <span class="text-supply-500 text-5xl md:text-7xl">·</span>
+        <span class="font-display text-5xl md:text-7xl text-dark-800 px-4">PRAZO</span>
+        <span class="text-supply-500 text-5xl md:text-7xl">·</span>
+        <span class="font-display text-5xl md:text-7xl text-dark-800 px-4">FÁBRICA PRÓPRIA</span>
+        <span class="text-supply-500 text-5xl md:text-7xl">·</span>
+      </div>
+    </section>
+
+    <!-- ============================================ -->
+    <!-- DIFERENCIAIS -->
+    <!-- ============================================ -->
+    <section id="diferenciais" class="relative py-24 md:py-32">
+      <div class="max-w-7xl mx-auto px-6 lg:px-8">
+
+        <!-- Section header -->
+        <div class="mb-16" data-animate>
+          <p class="font-mono text-xs uppercase tracking-[0.2em] text-supply-400 mb-4">Por que nos Escolher</p>
+          <h2 class="font-display text-display-sm md:text-display-md text-white">NOSSO DNA</h2>
+        </div>
+
+        <!-- Diferenciais -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
+
+          <!-- Diferencial 1 -->
+          <div data-animate class="group relative border border-white/5 rounded-2xl p-8 md:p-10 hover:border-supply-500/30 transition-all duration-500 bg-dark-900/50">
+            <div class="flex items-center gap-4 mb-6">
+              <div class="w-12 h-12 rounded-xl bg-supply-500/10 flex items-center justify-center group-hover:bg-supply-500/20 transition-colors">
+                <svg class="w-6 h-6 text-supply-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+              </div>
+              <span class="font-mono text-xs text-dark-500 tracking-wider">01 / 04</span>
+            </div>
+            <h3 class="font-display text-3xl text-white mb-3">QUALIDADE GARANTIDA</h3>
+            <p class="text-dark-400 leading-relaxed">Fábrica própria com rígido controle de tecidos, costuras e acabamento. Cada peça passa por inspeção individual antes de sair da nossa linha.</p>
+          </div>
+
+          <!-- Diferencial 2 -->
+          <div data-animate class="group relative border border-white/5 rounded-2xl p-8 md:p-10 hover:border-supply-500/30 transition-all duration-500 bg-dark-900/50">
+            <div class="flex items-center gap-4 mb-6">
+              <div class="w-12 h-12 rounded-xl bg-supply-500/10 flex items-center justify-center group-hover:bg-supply-500/20 transition-colors">
+                <svg class="w-6 h-6 text-supply-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+              </div>
+              <span class="font-mono text-xs text-dark-500 tracking-wider">02 / 04</span>
+            </div>
+            <h3 class="font-display text-3xl text-white mb-3">PRAZO CONFIÁVEL</h3>
+            <p class="text-dark-400 leading-relaxed">Previsibilidade na entrega para não parar a sua operação. Planejamento logístico pensado para atender a demanda no tempo certo.</p>
+          </div>
+
+          <!-- Diferencial 3 -->
+          <div data-animate class="group relative border border-white/5 rounded-2xl p-8 md:p-10 hover:border-supply-500/30 transition-all duration-500 bg-dark-900/50">
+            <div class="flex items-center gap-4 mb-6">
+              <div class="w-12 h-12 rounded-xl bg-supply-500/10 flex items-center justify-center group-hover:bg-supply-500/20 transition-colors">
+                <svg class="w-6 h-6 text-supply-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/></svg>
+              </div>
+              <span class="font-mono text-xs text-dark-500 tracking-wider">03 / 04</span>
+            </div>
+            <h3 class="font-display text-3xl text-white mb-3">CONSULTORIA TÉCNICA</h3>
+            <p class="text-dark-400 leading-relaxed">Mais do que vender EPIs, ajudamos sua empresa a se adequar às NRs com orientação especializada e personalizada.</p>
+          </div>
+
+          <!-- Diferencial 4 -->
+          <div data-animate class="group relative border border-white/5 rounded-2xl p-8 md:p-10 hover:border-supply-500/30 transition-all duration-500 bg-dark-900/50">
+            <div class="flex items-center gap-4 mb-6">
+              <div class="w-12 h-12 rounded-xl bg-supply-500/10 flex items-center justify-center group-hover:bg-supply-500/20 transition-colors">
+                <svg class="w-6 h-6 text-supply-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/></svg>
+              </div>
+              <span class="font-mono text-xs text-dark-500 tracking-wider">04 / 04</span>
+            </div>
+            <h3 class="font-display text-3xl text-white mb-3">ATENDIMENTO PERSONALIZADO</h3>
+            <p class="text-dark-400 leading-relaxed">Cada operação é única. Entendemos o seu dia a dia para oferecer a solução exata — sem desperdício, sem surpresas.</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================ -->
+    <!-- NÚMEROS -->
+    <!-- ============================================ -->
+    <section class="py-20 border-y border-white/5">
+      <div class="max-w-7xl mx-auto px-6 lg:px-8">
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12 text-center">
+          <div data-animate>
+            <p class="font-display text-5xl md:text-6xl text-supply-500 counter" data-target="15">0</p>
+            <p class="font-mono text-xs uppercase tracking-[0.15em] text-dark-400 mt-2">Anos de mercado</p>
+          </div>
+          <div data-animate>
+            <p class="font-display text-5xl md:text-6xl text-supply-500">
+              <span class="counter" data-target="500">0</span><span class="text-dark-500">+</span>
+            </p>
+            <p class="font-mono text-xs uppercase tracking-[0.15em] text-dark-400 mt-2">Empresas atendidas</p>
+          </div>
+          <div data-animate>
+            <p class="font-display text-5xl md:text-6xl text-supply-500">
+              <span class="counter" data-target="50">0</span><span class="text-dark-500">k+</span>
+            </p>
+            <p class="font-mono text-xs uppercase tracking-[0.15em] text-dark-400 mt-2">Peças entregues/ano</p>
+          </div>
+          <div data-animate>
+            <p class="font-display text-5xl md:text-6xl text-supply-500">ISO</p>
+            <p class="font-mono text-xs uppercase tracking-[0.15em] text-dark-400 mt-2">9001 Certificada</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================ -->
+    <!-- PROCESSO -->
+    <!-- ============================================ -->
+    <section id="processo" class="relative py-24 md:py-32">
+      <div class="max-w-7xl mx-auto px-6 lg:px-8">
+
+        <!-- Section header -->
+        <div class="mb-16" data-animate>
+          <p class="font-mono text-xs uppercase tracking-[0.2em] text-supply-400 mb-4">Como Funciona</p>
+          <h2 class="font-display text-display-sm md:text-display-md text-white">DO PEDIDO À ENTREGA</h2>
+          <p class="mt-4 text-dark-400 max-w-xl text-lg">Processo simples, resultado sério. Três passos para equipar sua equipe.</p>
+        </div>
+
+        <!-- Steps -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 relative">
+          <!-- Connector line (desktop) -->
+          <div class="hidden md:block absolute top-16 left-[16.6%] right-[16.6%] h-px bg-gradient-to-r from-supply-500/50 via-supply-500/20 to-supply-500/50"></div>
+
+          <!-- Step 1 -->
+          <div data-animate class="relative text-center md:text-left">
+            <div class="w-12 h-12 rounded-full bg-supply-500 flex items-center justify-center font-display text-2xl text-white mx-auto md:mx-0 mb-6 relative z-10">1</div>
+            <h3 class="font-display text-2xl text-white mb-3">DIAGNÓSTICO</h3>
+            <p class="text-dark-400 leading-relaxed">Entendemos sua operação, riscos e necessidades técnicas. Definimos juntos o que cada função precisa.</p>
+          </div>
+
+          <!-- Step 2 -->
+          <div data-animate class="relative text-center md:text-left">
+            <div class="w-12 h-12 rounded-full bg-supply-500 flex items-center justify-center font-display text-2xl text-white mx-auto md:mx-0 mb-6 relative z-10">2</div>
+            <h3 class="font-display text-2xl text-white mb-3">PRODUÇÃO</h3>
+            <p class="text-dark-400 leading-relaxed">Fabricamos na nossa planta com controle de qualidade em cada etapa. Tecido, corte, costura, acabamento.</p>
+          </div>
+
+          <!-- Step 3 -->
+          <div data-animate class="relative text-center md:text-left">
+            <div class="w-12 h-12 rounded-full bg-supply-500 flex items-center justify-center font-display text-2xl text-white mx-auto md:mx-0 mb-6 relative z-10">3</div>
+            <h3 class="font-display text-2xl text-white mb-3">ENTREGA</h3>
+            <p class="text-dark-400 leading-relaxed">Logística planejada para seu prazo. Cada peça inspecionada, embalada e entregue pronta para uso.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================ -->
+    <!-- MARQUEE STRIP 2 (Reverse) -->
+    <!-- ============================================ -->
+    <section class="py-8 overflow-hidden opacity-40">
+      <div class="marquee-track-reverse flex whitespace-nowrap gap-6">
+        <span class="font-mono text-sm uppercase tracking-[0.15em] text-dark-600 px-4">NR6</span>
+        <span class="text-dark-700">·</span>
+        <span class="font-mono text-sm uppercase tracking-[0.15em] text-dark-600 px-4">NR10</span>
+        <span class="text-dark-700">·</span>
+        <span class="font-mono text-sm uppercase tracking-[0.15em] text-dark-600 px-4">NR12</span>
+        <span class="text-dark-700">·</span>
+        <span class="font-mono text-sm uppercase tracking-[0.15em] text-dark-600 px-4">ISO 9001</span>
+        <span class="text-dark-700">·</span>
+        <span class="font-mono text-sm uppercase tracking-[0.15em] text-dark-600 px-4">BRIM PESADO</span>
+        <span class="text-dark-700">·</span>
+        <span class="font-mono text-sm uppercase tracking-[0.15em] text-dark-600 px-4">ARCO ELÉTRICO</span>
+        <span class="text-dark-700">·</span>
+        <span class="font-mono text-sm uppercase tracking-[0.15em] text-dark-600 px-4">PROTEÇÃO UV</span>
+        <span class="text-dark-700">·</span>
+        <span class="font-mono text-sm uppercase tracking-[0.15em] text-dark-600 px-4">ASSEPSIA</span>
+        <span class="text-dark-700">·</span>
+        <!-- Duplicate -->
+        <span class="font-mono text-sm uppercase tracking-[0.15em] text-dark-600 px-4">NR6</span>
+        <span class="text-dark-700">·</span>
+        <span class="font-mono text-sm uppercase tracking-[0.15em] text-dark-600 px-4">NR10</span>
+        <span class="text-dark-700">·</span>
+        <span class="font-mono text-sm uppercase tracking-[0.15em] text-dark-600 px-4">NR12</span>
+        <span class="text-dark-700">·</span>
+        <span class="font-mono text-sm uppercase tracking-[0.15em] text-dark-600 px-4">ISO 9001</span>
+        <span class="text-dark-700">·</span>
+        <span class="font-mono text-sm uppercase tracking-[0.15em] text-dark-600 px-4">BRIM PESADO</span>
+        <span class="text-dark-700">·</span>
+        <span class="font-mono text-sm uppercase tracking-[0.15em] text-dark-600 px-4">ARCO ELÉTRICO</span>
+        <span class="text-dark-700">·</span>
+        <span class="font-mono text-sm uppercase tracking-[0.15em] text-dark-600 px-4">PROTEÇÃO UV</span>
+        <span class="text-dark-700">·</span>
+        <span class="font-mono text-sm uppercase tracking-[0.15em] text-dark-600 px-4">ASSEPSIA</span>
+        <span class="text-dark-700">·</span>
+      </div>
+    </section>
+
+    <!-- ============================================ -->
+    <!-- CTA SECTION -->
+    <!-- ============================================ -->
+    <section class="relative py-32 md:py-40 grain overflow-hidden">
+      <div class="absolute inset-0 bg-gradient-to-b from-dark-950 via-supply-950/30 to-dark-950"></div>
+      <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-supply-500/10 rounded-full blur-3xl"></div>
+
+      <div class="relative z-10 max-w-4xl mx-auto px-6 lg:px-8 text-center">
+        <p data-animate class="font-mono text-xs uppercase tracking-[0.2em] text-supply-400 mb-6">Pronto para Começar?</p>
+        <h2 data-animate class="font-display text-display-sm md:text-display-md lg:text-display-lg text-white">SUA EQUIPE MERECE<br><span class="text-supply-500">O MELHOR</span></h2>
+        <p data-animate class="mt-6 text-lg md:text-xl text-dark-300 max-w-2xl mx-auto leading-relaxed">
+          Solicite um orçamento personalizado. Sem compromisso, sem enrolação — só a solução certa para a sua operação.
+        </p>
+        <div data-animate class="mt-10">
+          <a href="https://wa.me/557534712333" target="_blank" class="inline-flex items-center gap-3 bg-supply-500 hover:bg-supply-600 text-white font-medium px-10 py-5 rounded-xl text-lg transition-all duration-300 hover:shadow-2xl hover:shadow-supply-500/25 active:scale-95">
+            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.625.846 5.059 2.284 7.034L.789 23.492a.75.75 0 00.917.918l4.458-1.495A11.945 11.945 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-2.201 0-4.263-.63-6.019-1.726l-.42-.26-4.355 1.46 1.46-4.355-.26-.42A9.96 9.96 0 012 12C2 6.486 6.486 2 12 2s10 4.486 10 10-4.486 10-10 10z"/></svg>
+            Falar com Especialista
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================ -->
+    <!-- CONTATO -->
+    <!-- ============================================ -->
+    <section id="contato" class="py-24 md:py-32">
+      <div class="max-w-7xl mx-auto px-6 lg:px-8">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+
+          <!-- Info -->
+          <div data-animate class="md:col-span-1">
+            <p class="font-mono text-xs uppercase tracking-[0.2em] text-supply-400 mb-4">Contato</p>
+            <h2 class="font-display text-display-sm text-white mb-6">FALE<br>CONOSCO</h2>
+            <p class="text-dark-400 leading-relaxed">Estamos prontos para entender sua operação e apresentar a melhor solução.</p>
+          </div>
+
+          <!-- Contact Details -->
+          <div data-animate class="md:col-span-2 grid grid-cols-1 sm:grid-cols-2 gap-8">
+
+            <div class="space-y-6">
+              <div>
+                <p class="font-mono text-xs uppercase tracking-[0.15em] text-dark-500 mb-2">Telefone</p>
+                <a href="tel:+557534712333" class="text-white text-lg hover:text-supply-400 transition-colors">(75) 3471-2333</a>
+              </div>
+              <div>
+                <p class="font-mono text-xs uppercase tracking-[0.15em] text-dark-500 mb-2">Endereço</p>
+                <p class="text-dark-300 leading-relaxed">R. Faustino Dias Lima, 131<br>Queimadinha — Feira de Santana, BA<br>44050-702</p>
+              </div>
+            </div>
+
+            <div class="space-y-6">
+              <div>
+                <p class="font-mono text-xs uppercase tracking-[0.15em] text-dark-500 mb-2">Horário</p>
+                <p class="text-dark-300">Seg a Sex — 08:00 às 18:00</p>
+                <p class="text-dark-300">Sábado — 08:00 às 12:00</p>
+                <p class="text-dark-500">Domingo — Fechado</p>
+              </div>
+              <div>
+                <p class="font-mono text-xs uppercase tracking-[0.15em] text-dark-500 mb-2">WhatsApp</p>
+                <a href="https://wa.me/557534712333" target="_blank" class="inline-flex items-center gap-2 text-supply-400 hover:text-supply-300 transition-colors">
+                  <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.625.846 5.059 2.284 7.034L.789 23.492a.75.75 0 00.917.918l4.458-1.495A11.945 11.945 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0z"/></svg>
+                  Enviar mensagem
+                </a>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============================================ -->
+  <!-- FOOTER -->
+  <!-- ============================================ -->
+  <footer class="border-t border-white/5 py-12">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8">
+      <div class="flex flex-col md:flex-row items-center justify-between gap-6">
+        <div class="flex items-center gap-3">
+          <div class="w-8 h-8 bg-supply-500 rounded-lg flex items-center justify-center font-display text-lg text-white">S</div>
+          <span class="font-display text-xl tracking-wide text-white">SUPPLY</span>
+        </div>
+        <p class="text-dark-500 text-sm font-mono">&copy; 2026 Supply EPIs e Uniformes. Todos os direitos reservados.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ============================================ -->
+  <!-- WHATSAPP FAB -->
+  <!-- ============================================ -->
+  <a href="https://wa.me/557534712333" target="_blank" id="whatsapp-fab"
+     class="fixed bottom-6 right-6 z-50 w-14 h-14 bg-green-500 hover:bg-green-600 rounded-full flex items-center justify-center shadow-lg shadow-green-500/30 hover:shadow-xl hover:shadow-green-500/40 transition-all duration-300 hover:scale-110 active:scale-95"
+     style="opacity: 0; transform: translateY(20px);">
+    <svg class="w-7 h-7 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.625.846 5.059 2.284 7.034L.789 23.492a.75.75 0 00.917.918l4.458-1.495A11.945 11.945 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-2.201 0-4.263-.63-6.019-1.726l-.42-.26-4.355 1.46 1.46-4.355-.26-.42A9.96 9.96 0 012 12C2 6.486 6.486 2 12 2s10 4.486 10 10-4.486 10-10 10z"/></svg>
+  </a>
+
+  <!-- ============================================ -->
+  <!-- SCRIPTS -->
+  <!-- ============================================ -->
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/ScrollTrigger.min.js"></script>
+
+  <script src="app.js"></script>
+
+</body>
+</html>
