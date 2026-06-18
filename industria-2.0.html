@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Supply Indústria 2.0 - uniformes industriais e EPIs organizados por risco, função e documentação.">
+  <meta property="og:title" content="Indústria 2.0 - Supply EPIs e Fardamentos Profissionais">
+  <meta property="og:description" content="Kit industrial mobile-first: brim, faixas refletivas, FR, NR10, respiradores, luvas, botas e CA.">
+  <meta property="og:type" content="website">
+  <title>Indústria 2.0 - Supply EPIs e Fardamentos Profissionais</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            supply: {
+              50: '#fff7ed',
+              100: '#ffedd5',
+              200: '#fed7aa',
+              300: '#fdba74',
+              400: '#fb923c',
+              500: '#f97316',
+              600: '#ea580c',
+              700: '#c2410c',
+              800: '#9a3412',
+              900: '#7c2d12',
+              950: '#431407',
+            },
+            dark: {
+              50: '#f8fafc',
+              100: '#f1f5f9',
+              200: '#e2e8f0',
+              300: '#cbd5e1',
+              400: '#94a3b8',
+              500: '#64748b',
+              600: '#475569',
+              700: '#334155',
+              800: '#1e293b',
+              900: '#0f172a',
+              950: '#020617',
+            }
+          },
+          fontFamily: {
+            display: ['Bebas Neue', 'sans-serif'],
+            body: ['Inter', 'sans-serif'],
+            mono: ['JetBrains Mono', 'monospace'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    ::selection { background: #f97316; color: #ffffff; }
+
+    body {
+      background:
+        radial-gradient(circle at 80% 6%, rgba(249, 115, 22, 0.14), transparent 28rem),
+        linear-gradient(180deg, #020617 0%, #030712 54%, #020617 100%);
+    }
+
+    .industrial-grid {
+      background-image:
+        linear-gradient(rgba(148, 163, 184, 0.075) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(148, 163, 184, 0.075) 1px, transparent 1px);
+      background-size: 56px 56px;
+      background-position: center;
+    }
+
+    .grain::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.86' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.08'/%3E%3C/svg%3E");
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    .detail-card {
+      background:
+        linear-gradient(180deg, rgba(15, 23, 42, 0.9), rgba(2, 6, 23, 0.86)),
+        #0f172a;
+    }
+
+    .detail-media {
+      background:
+        radial-gradient(circle at 50% 40%, rgba(249, 115, 22, 0.17), transparent 54%),
+        linear-gradient(180deg, rgba(30, 41, 59, 0.92), rgba(2, 6, 23, 0.78));
+      overflow: hidden;
+    }
+
+    .detail-media img {
+      transform: scale(1.18);
+    }
+
+    .mobile-bottom-cta {
+      transform: translateY(120%);
+      transition: transform 260ms ease;
+    }
+
+    .mobile-bottom-cta.visible {
+      transform: translateY(0);
+    }
+
+    .horizontal-row {
+      scrollbar-width: none;
+    }
+
+    .horizontal-row::-webkit-scrollbar {
+      display: none;
+    }
+
+    @media (min-width: 1024px) {
+      .desktop-sticky {
+        position: sticky;
+        top: 6rem;
+      }
+    }
+  </style>
+</head>
+
+<body class="bg-dark-950 text-white font-body antialiased overflow-x-hidden pb-24 md:pb-0">
+  <nav id="navbar" class="fixed top-0 z-50 w-full transition-all duration-300">
+    <div class="mx-auto max-w-7xl px-6 lg:px-8">
+      <div class="flex h-20 items-center justify-between">
+        <a href="index.html" class="flex items-center gap-3">
+          <img src="images/S-supply.png" alt="Supply" class="h-10 w-10 object-contain">
+          <div>
+            <span class="font-display text-2xl text-white">SUPPLY</span>
+            <span class="block -mt-1 font-mono text-[10px] uppercase tracking-[0.2em] text-dark-400">EPIs & Uniformes</span>
+          </div>
+        </a>
+
+        <div class="hidden items-center gap-8 md:flex">
+          <a href="industria.html" class="text-sm text-dark-300 transition-colors hover:text-white">Indústria atual</a>
+          <a href="#camadas" class="text-sm text-dark-300 transition-colors hover:text-white">Camadas</a>
+          <a href="#riscos" class="text-sm text-dark-300 transition-colors hover:text-white">Riscos</a>
+          <a href="#contato" class="text-sm text-dark-300 transition-colors hover:text-white">Contato</a>
+          <a href="https://wa.me/557534712333?text=Ol%C3%A1%2C%20quero%20montar%20um%20kit%20industrial%20com%20a%20Supply" target="_blank" class="rounded-lg bg-supply-500 px-5 py-2.5 text-sm font-semibold text-white transition-all hover:bg-supply-600 hover:shadow-lg hover:shadow-supply-500/25">
+            Solicitar orçamento
+          </a>
+        </div>
+
+        <button id="mobile-toggle" class="p-2 text-white md:hidden" aria-label="Abrir menu" onclick="document.getElementById('mobile-menu').classList.toggle('hidden')">
+          <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+        </button>
+      </div>
+    </div>
+
+    <div id="mobile-menu" class="hidden border-t border-white/5 bg-dark-950/96 px-6 py-5 backdrop-blur-xl md:hidden">
+      <div class="space-y-4">
+        <a href="industria.html" class="block text-dark-200">Indústria atual</a>
+        <a href="#camadas" class="block text-dark-200">Camadas</a>
+        <a href="#riscos" class="block text-dark-200">Riscos</a>
+        <a href="#contato" class="block text-dark-200">Contato</a>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <section class="relative min-h-screen overflow-hidden grain industrial-grid">
+      <div class="absolute inset-0 bg-[linear-gradient(180deg,rgba(2,6,23,0.72),rgba(2,6,23,0.97))]"></div>
+      <div class="absolute right-[-6rem] top-20 hidden h-[86vh] opacity-65 md:block lg:right-[5vw]">
+        <img src="images/industria-2/worker.png" alt="" class="h-full w-auto object-contain">
+      </div>
+
+      <div class="relative z-10 mx-auto flex min-h-screen max-w-7xl flex-col px-6 pb-12 pt-28 lg:px-8 lg:pt-36">
+        <div class="order-1 max-w-3xl">
+          <a href="index.html" class="mb-8 inline-flex items-center gap-2 font-mono text-xs uppercase tracking-[0.22em] text-dark-400 transition-colors hover:text-supply-400">
+            <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
+            Voltar
+          </a>
+          <p class="mb-5 font-mono text-xs uppercase tracking-[0.28em] text-supply-400">Indústria 2.0</p>
+          <h1 class="font-display text-[4.35rem] leading-[0.9] text-white sm:text-[5.8rem] lg:text-[8rem]">
+            <span class="block">PROTEÇÃO</span>
+            <span class="block text-dark-400">INDUSTRIAL</span>
+            <span class="block text-supply-500">SEM IMPROVISO</span>
+          </h1>
+          <p class="mt-7 max-w-2xl text-lg leading-relaxed text-dark-300 md:text-xl">
+            Uniforme, EPIs e documentação em uma compra consultiva. A linha é montada por risco, função e rotina de trabalho.
+          </p>
+        </div>
+
+        <div class="order-3 mt-7 flex justify-center md:hidden">
+          <img src="images/industria-2/worker.png" alt="Trabalhador industrial com uniforme completo e EPIs." class="h-[27rem] w-auto object-contain drop-shadow-2xl">
+        </div>
+
+        <div class="order-2 mt-8 grid gap-3 sm:flex">
+          <a href="#camadas" class="inline-flex items-center justify-center gap-2 rounded-lg bg-supply-500 px-7 py-4 text-base font-semibold text-white transition-all hover:bg-supply-600">
+            Ver kit por camadas
+            <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </a>
+          <a href="https://wa.me/557534712333?text=Ol%C3%A1%2C%20quero%20montar%20um%20kit%20industrial%20com%20a%20Supply" target="_blank" class="inline-flex items-center justify-center gap-2 rounded-lg border border-white/10 px-7 py-4 text-base font-semibold text-dark-200 transition-colors hover:border-supply-500/50 hover:text-white">
+            Orçar no WhatsApp
+            <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+          </a>
+        </div>
+
+        <div class="order-4 mt-auto grid grid-cols-3 gap-3 pt-12 md:max-w-2xl">
+          <div class="rounded-lg border border-white/8 bg-dark-900/70 p-4">
+            <p class="font-display text-3xl text-white">CA</p>
+            <p class="mt-1 font-mono text-[9px] uppercase tracking-[0.16em] text-dark-500">vigente</p>
+          </div>
+          <div class="rounded-lg border border-white/8 bg-dark-900/70 p-4">
+            <p class="font-display text-3xl text-supply-500">FR</p>
+            <p class="mt-1 font-mono text-[9px] uppercase tracking-[0.16em] text-dark-500">antichamas</p>
+          </div>
+          <div class="rounded-lg border border-white/8 bg-dark-900/70 p-4">
+            <p class="font-display text-3xl text-yellow-300">NR10</p>
+            <p class="mt-1 font-mono text-[9px] uppercase tracking-[0.16em] text-dark-500">elétrica</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="camadas" class="relative py-20 md:py-28">
+      <div class="mx-auto max-w-7xl px-6 lg:px-8">
+        <div class="mb-10 max-w-2xl">
+          <p class="mb-4 font-mono text-xs uppercase tracking-[0.24em] text-supply-400">Kit por camadas</p>
+          <h2 class="font-display text-5xl leading-none text-white md:text-7xl">CADA ITEM ENTRA POR UM MOTIVO.</h2>
+          <p class="mt-5 text-base leading-relaxed text-dark-400 md:text-lg">
+            A leitura é simples no celular: o que protege, onde entra e quando faz sentido para a operação.
+          </p>
+        </div>
+
+        <div class="grid gap-8 lg:grid-cols-[0.78fr_1.22fr] lg:items-start">
+          <aside class="desktop-sticky hidden lg:block">
+            <div class="rounded-lg border border-white/8 bg-dark-900/60 p-6">
+              <div class="detail-media rounded-lg p-6">
+                <img src="images/industria-2/worker.png" alt="Trabalhador industrial com uniforme completo." class="mx-auto h-[35rem] w-auto object-contain">
+              </div>
+              <div class="mt-5 grid grid-cols-2 gap-3">
+                <div class="rounded-lg bg-dark-950/80 p-4">
+                  <p class="font-mono text-[10px] uppercase tracking-[0.18em] text-dark-500">Base</p>
+                  <p class="mt-1 text-sm font-semibold text-dark-100">Brim pesado</p>
+                </div>
+                <div class="rounded-lg bg-dark-950/80 p-4">
+                  <p class="font-mono text-[10px] uppercase tracking-[0.18em] text-dark-500">Complemento</p>
+                  <p class="mt-1 text-sm font-semibold text-dark-100">EPI com CA</p>
+                </div>
+              </div>
+            </div>
+          </aside>
+
+          <div class="grid gap-4">
+            <article class="detail-card grid grid-cols-[7rem_1fr] gap-4 rounded-lg border border-white/8 p-4 md:grid-cols-[12rem_1fr] md:p-5">
+              <div class="detail-media flex min-h-32 items-center justify-center rounded-lg">
+                <img src="images/industria-2/detail-brim.png" alt="Detalhe do tecido em brim pesado." class="h-32 w-full object-contain md:h-44">
+              </div>
+              <div>
+                <p class="font-mono text-[10px] uppercase tracking-[0.2em] text-supply-400">01 / Uniforme base</p>
+                <h3 class="mt-2 font-display text-3xl leading-none text-white md:text-4xl">BRIM PESADO</h3>
+                <p class="mt-3 text-sm leading-relaxed text-dark-300 md:text-base">Camisa e calça em alta gramatura para abrasão, produção, logística e manutenção industrial.</p>
+                <div class="mt-4 flex flex-wrap gap-2">
+                  <span class="rounded-md bg-supply-500/10 px-2.5 py-1 font-mono text-[10px] uppercase text-supply-400">Costura reforçada</span>
+                  <span class="rounded-md bg-dark-800 px-2.5 py-1 font-mono text-[10px] uppercase text-dark-300">Personalizável</span>
+                </div>
+              </div>
+            </article>
+
+            <article class="detail-card grid grid-cols-[7rem_1fr] gap-4 rounded-lg border border-white/8 p-4 md:grid-cols-[12rem_1fr] md:p-5">
+              <div class="detail-media flex min-h-32 items-center justify-center rounded-lg">
+                <img src="images/industria-2/detail-refletivo.png" alt="Detalhe das faixas refletivas." class="h-32 w-full object-contain md:h-44">
+              </div>
+              <div>
+                <p class="font-mono text-[10px] uppercase tracking-[0.2em] text-yellow-300">02 / Visibilidade</p>
+                <h3 class="mt-2 font-display text-3xl leading-none text-white md:text-4xl">FAIXA REFLETIVA</h3>
+                <p class="mt-3 text-sm leading-relaxed text-dark-300 md:text-base">Faixas em tronco, braços e pernas para pátios, empilhadeiras, tráfego interno e baixa luminosidade.</p>
+                <div class="mt-4 flex flex-wrap gap-2">
+                  <span class="rounded-md bg-dark-800 px-2.5 py-1 font-mono text-[10px] uppercase text-dark-300">Noturno</span>
+                  <span class="rounded-md bg-dark-800 px-2.5 py-1 font-mono text-[10px] uppercase text-dark-300">Alta visibilidade</span>
+                </div>
+              </div>
+            </article>
+
+            <article class="detail-card grid grid-cols-[7rem_1fr] gap-4 rounded-lg border border-white/8 p-4 md:grid-cols-[12rem_1fr] md:p-5">
+              <div class="detail-media flex min-h-32 items-center justify-center rounded-lg">
+                <img src="images/industria-2/detail-ca-personalizacao.png" alt="Detalhe do tronco do uniforme técnico." class="h-32 w-full object-contain md:h-44">
+              </div>
+              <div>
+                <p class="font-mono text-[10px] uppercase tracking-[0.2em] text-supply-400">03 / Risco técnico</p>
+                <h3 class="mt-2 font-display text-3xl leading-none text-white md:text-4xl">FR E NR10</h3>
+                <p class="mt-3 text-sm leading-relaxed text-dark-300 md:text-base">Quando há calor, faísca ou arco elétrico, a especificação muda. O tecido e a documentação precisam acompanhar.</p>
+                <div class="mt-4 flex flex-wrap gap-2">
+                  <span class="rounded-md bg-supply-500/10 px-2.5 py-1 font-mono text-[10px] uppercase text-supply-400">FR</span>
+                  <span class="rounded-md bg-dark-800 px-2.5 py-1 font-mono text-[10px] uppercase text-dark-300">NR10</span>
+                  <span class="rounded-md bg-dark-800 px-2.5 py-1 font-mono text-[10px] uppercase text-dark-300">ATPV</span>
+                </div>
+              </div>
+            </article>
+
+            <article class="detail-card grid grid-cols-[7rem_1fr] gap-4 rounded-lg border border-white/8 p-4 md:grid-cols-[12rem_1fr] md:p-5">
+              <div class="detail-media flex min-h-32 items-center justify-center rounded-lg">
+                <img src="images/industria-2/detail-capacete-oculos.png" alt="Detalhe do capacete e óculos de segurança." class="h-32 w-full object-contain md:h-44">
+              </div>
+              <div>
+                <p class="font-mono text-[10px] uppercase tracking-[0.2em] text-yellow-300">04 / Cabeça e visão</p>
+                <h3 class="mt-2 font-display text-3xl leading-none text-white md:text-4xl">CAPACETE + ÓCULOS</h3>
+                <p class="mt-3 text-sm leading-relaxed text-dark-300 md:text-base">Proteção contra impacto, partículas e projeções. Seleção por atividade e ambiente de exposição.</p>
+                <div class="mt-4 flex flex-wrap gap-2">
+                  <span class="rounded-md bg-dark-800 px-2.5 py-1 font-mono text-[10px] uppercase text-dark-300">NR6</span>
+                  <span class="rounded-md bg-dark-800 px-2.5 py-1 font-mono text-[10px] uppercase text-dark-300">CA</span>
+                </div>
+              </div>
+            </article>
+
+            <article class="detail-card grid grid-cols-[7rem_1fr] gap-4 rounded-lg border border-white/8 p-4 md:grid-cols-[12rem_1fr] md:p-5">
+              <div class="detail-media flex min-h-32 items-center justify-center rounded-lg">
+                <img src="images/industria-2/detail-respirador.png" alt="Detalhe do respirador." class="h-32 w-full object-contain md:h-44">
+              </div>
+              <div>
+                <p class="font-mono text-[10px] uppercase tracking-[0.2em] text-supply-400">05 / Respiração</p>
+                <h3 class="mt-2 font-display text-3xl leading-none text-white md:text-4xl">RESPIRADOR</h3>
+                <p class="mt-3 text-sm leading-relaxed text-dark-300 md:text-base">Máscaras e filtros para poeiras, vapores, fumos metálicos e partículas suspensas.</p>
+                <div class="mt-4 flex flex-wrap gap-2">
+                  <span class="rounded-md bg-dark-800 px-2.5 py-1 font-mono text-[10px] uppercase text-dark-300">Filtro</span>
+                  <span class="rounded-md bg-dark-800 px-2.5 py-1 font-mono text-[10px] uppercase text-dark-300">Vedação</span>
+                </div>
+              </div>
+            </article>
+
+            <article class="detail-card grid grid-cols-[7rem_1fr] gap-4 rounded-lg border border-white/8 p-4 md:grid-cols-[12rem_1fr] md:p-5">
+              <div class="detail-media flex min-h-32 items-center justify-center rounded-lg">
+                <img src="images/industria-2/detail-luvas-botas.png" alt="Detalhe das luvas e botas." class="h-32 w-full object-contain md:h-44">
+              </div>
+              <div>
+                <p class="font-mono text-[10px] uppercase tracking-[0.2em] text-yellow-300">06 / Mãos e pés</p>
+                <h3 class="mt-2 font-display text-3xl leading-none text-white md:text-4xl">LUVAS + BOTAS</h3>
+                <p class="mt-3 text-sm leading-relaxed text-dark-300 md:text-base">Proteção contra impacto, escorregamento, perfuração, óleo e esforço contínuo no turno.</p>
+                <div class="mt-4 flex flex-wrap gap-2">
+                  <span class="rounded-md bg-dark-800 px-2.5 py-1 font-mono text-[10px] uppercase text-dark-300">Antiderrapante</span>
+                  <span class="rounded-md bg-dark-800 px-2.5 py-1 font-mono text-[10px] uppercase text-dark-300">Impacto</span>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="riscos" class="relative border-y border-white/5 bg-dark-950/80 py-18 md:py-24">
+      <div class="mx-auto max-w-7xl px-6 lg:px-8">
+        <div class="mb-8">
+          <p class="mb-4 font-mono text-xs uppercase tracking-[0.24em] text-supply-400">Compra por risco</p>
+          <h2 class="font-display text-5xl leading-none text-white md:text-7xl">COMECE PELO AMBIENTE.</h2>
+        </div>
+
+        <div class="horizontal-row flex snap-x gap-4 overflow-x-auto pb-2 md:grid md:grid-cols-4 md:overflow-visible">
+          <article class="min-w-[16rem] snap-start rounded-lg border border-white/8 bg-dark-900 p-5">
+            <p class="font-display text-3xl text-white">CHÃO DE FÁBRICA</p>
+            <p class="mt-3 text-sm leading-relaxed text-dark-400">Brim pesado, costura reforçada, bota e óculos.</p>
+          </article>
+          <article class="min-w-[16rem] snap-start rounded-lg border border-white/8 bg-dark-900 p-5">
+            <p class="font-display text-3xl text-white">CALOR E SOLDA</p>
+            <p class="mt-3 text-sm leading-relaxed text-dark-400">Vestimenta FR, luva correta e proteção facial.</p>
+          </article>
+          <article class="min-w-[16rem] snap-start rounded-lg border border-white/8 bg-dark-900 p-5">
+            <p class="font-display text-3xl text-white">ELÉTRICA</p>
+            <p class="mt-3 text-sm leading-relaxed text-dark-400">NR10, ATPV, CA vigente e ficha técnica.</p>
+          </article>
+          <article class="min-w-[16rem] snap-start rounded-lg border border-white/8 bg-dark-900 p-5">
+            <p class="font-display text-3xl text-white">PÁTIO E NOITE</p>
+            <p class="mt-3 text-sm leading-relaxed text-dark-400">Faixa refletiva, capacete, bota e identificação.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="contato" class="relative overflow-hidden py-20 md:py-28 grain industrial-grid">
+      <div class="absolute inset-0 bg-dark-950/88"></div>
+      <div class="relative z-10 mx-auto max-w-5xl px-6 text-center lg:px-8">
+        <p class="mb-4 font-mono text-xs uppercase tracking-[0.24em] text-supply-400">Atendimento consultivo</p>
+        <h2 class="font-display text-5xl leading-none text-white md:text-7xl">O KIT CERTO DEPENDE DO RISCO CERTO.</h2>
+        <p class="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-dark-300">
+          A Supply entende função, ambiente, norma, personalização e documentação antes de fechar a proposta.
+        </p>
+        <div class="mt-9 grid gap-3 sm:flex sm:justify-center">
+          <a href="https://wa.me/557534712333?text=Ol%C3%A1%2C%20quero%20montar%20um%20kit%20industrial%20com%20a%20Supply" target="_blank" class="inline-flex items-center justify-center gap-2 rounded-lg bg-supply-500 px-7 py-4 font-semibold text-white transition-colors hover:bg-supply-600">
+            Montar kit industrial
+            <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+          </a>
+          <a href="industria.html" class="inline-flex items-center justify-center rounded-lg border border-white/10 px-7 py-4 font-semibold text-dark-200 transition-colors hover:border-white/25 hover:text-white">
+            Ver página atual
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="border-t border-white/5 bg-dark-950 py-10">
+    <div class="mx-auto flex max-w-7xl flex-col items-center justify-between gap-5 px-6 text-center md:flex-row md:text-left lg:px-8">
+      <a href="index.html" class="flex items-center gap-3">
+        <img src="images/S-supply.png" alt="Supply" class="h-8 w-8 object-contain">
+        <span class="font-display text-2xl text-white">SUPPLY</span>
+      </a>
+      <p class="text-sm text-dark-500">Feira de Santana - BA | EPIs e fardamentos profissionais</p>
+    </div>
+  </footer>
+
+  <div id="mobile-cta" class="mobile-bottom-cta fixed inset-x-0 bottom-0 z-50 border-t border-white/10 bg-dark-950/96 p-4 backdrop-blur-xl md:hidden">
+    <a href="https://wa.me/557534712333?text=Ol%C3%A1%2C%20quero%20montar%20um%20kit%20industrial%20com%20a%20Supply" target="_blank" class="flex w-full items-center justify-center rounded-lg bg-supply-500 px-5 py-3.5 font-semibold text-white">
+      Orçar kit industrial
+    </a>
+  </div>
+
+  <script>
+    const navbar = document.getElementById('navbar');
+    const mobileCta = document.getElementById('mobile-cta');
+
+    function updateChrome() {
+      const scrolled = window.scrollY > 32;
+      navbar.classList.toggle('bg-dark-950/92', scrolled);
+      navbar.classList.toggle('backdrop-blur-xl', scrolled);
+      navbar.classList.toggle('border-b', scrolled);
+      navbar.classList.toggle('border-white/5', scrolled);
+      mobileCta.classList.toggle('visible', window.scrollY > 480);
+    }
+
+    window.addEventListener('scroll', updateChrome, { passive: true });
+    updateChrome();
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', (event) => {
+        const target = document.querySelector(anchor.getAttribute('href'));
+        if (!target) return;
+        event.preventDefault();
+        const y = target.getBoundingClientRect().top + window.scrollY - 76;
+        window.scrollTo({ top: y, behavior: 'smooth' });
+        const menu = document.getElementById('mobile-menu');
+        if (menu && !menu.classList.contains('hidden')) menu.classList.add('hidden');
+      });
+    });
+  </script>
+</body>
+</html>
