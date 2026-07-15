@@ -30,7 +30,7 @@ const heroTl = gsap.timeline({
 
 heroTl
   .to('[data-animate]', { opacity: 1, duration: 0 }) // Reset opacity for hero elements
-  .from('.font-mono[data-animate]', {
+  .from('main > section:first-child .font-mono[data-animate]', {
     y: 20,
     opacity: 0,
     duration: 0.8,
@@ -41,7 +41,7 @@ heroTl
     duration: 1,
     stagger: 0.12,
   }, 0.5)
-  .from('main > section:first-child p[data-animate]', {
+  .from('main > section:first-child p[data-animate]:not(.font-mono)', {
     y: 20,
     opacity: 0,
     duration: 0.7,
@@ -126,7 +126,7 @@ counters.forEach(counter => {
 });
 
 // --- Sector Cards Stagger ---
-const sectorCards = document.querySelectorAll('#setores .grid > div');
+const sectorCards = document.querySelectorAll('#setores [data-scroll-hover]');
 if (sectorCards.length > 0) {
   gsap.set(sectorCards, { opacity: 0, y: 40 });
   gsap.to(sectorCards, {
@@ -141,6 +141,59 @@ if (sectorCards.length > 0) {
       toggleActions: 'play none none none',
     }
   });
+}
+
+// --- Mobile Sector Card Focus ---
+// Touch devices do not have a persistent hover state, so the card nearest the
+// viewport focus line receives the same visual treatment while scrolling.
+if (sectorCards.length > 0) {
+  const mobileCardQuery = window.matchMedia('(max-width: 767px), (hover: none) and (pointer: coarse)');
+  let cardUpdateFrame = null;
+
+  const updateActiveSectorCard = () => {
+    cardUpdateFrame = null;
+
+    if (!mobileCardQuery.matches) {
+      sectorCards.forEach(card => card.classList.remove('is-scroll-active'));
+      return;
+    }
+
+    const focusY = window.innerHeight * 0.52;
+    const visibleTop = window.innerHeight * 0.18;
+    const visibleBottom = window.innerHeight * 0.82;
+    let activeCard = null;
+    let closestDistance = Infinity;
+
+    sectorCards.forEach(card => {
+      const rect = card.getBoundingClientRect();
+      if (rect.bottom <= visibleTop || rect.top >= visibleBottom) return;
+
+      const cardCenter = rect.top + (rect.height / 2);
+      const distance = Math.abs(cardCenter - focusY);
+      if (distance < closestDistance) {
+        closestDistance = distance;
+        activeCard = card;
+      }
+    });
+
+    sectorCards.forEach(card => {
+      card.classList.toggle('is-scroll-active', card === activeCard);
+    });
+  };
+
+  const requestCardUpdate = () => {
+    if (cardUpdateFrame !== null) return;
+    cardUpdateFrame = window.requestAnimationFrame(updateActiveSectorCard);
+  };
+
+  window.addEventListener('scroll', requestCardUpdate, { passive: true });
+  window.addEventListener('resize', requestCardUpdate);
+  if (typeof mobileCardQuery.addEventListener === 'function') {
+    mobileCardQuery.addEventListener('change', requestCardUpdate);
+  } else {
+    mobileCardQuery.addListener(requestCardUpdate);
+  }
+  requestCardUpdate();
 }
 
 // --- Diferencial Cards Stagger ---
