@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Capacetes, luvas, calçados, óculos, respiradores e proteção auditiva organizados por risco e função.">
+  <meta property="og:title" content="EPIs - Supply Equipamentos de Proteção Individual">
+  <meta property="og:description" content="Linha de EPIs por risco: cabeça, mãos, pés, olhos, respiração e audição.">
+  <meta property="og:type" content="website">
+  <title>EPIs - Supply Equipamentos de Proteção Individual</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            supply: { 400: '#fb923c', 500: '#f97316', 600: '#ea580c' },
+            dark: { 200: '#e2e8f0', 300: '#cbd5e1', 400: '#94a3b8', 500: '#64748b', 600: '#475569', 700: '#334155', 800: '#1e293b', 900: '#0f172a', 950: '#020617' },
+            mint: { 300: '#86efac', 400: '#4ade80' },
+            ink: { 300: '#93c5fd', 400: '#60a5fa' },
+            caution: { 300: '#fde047' }
+          },
+          fontFamily: {
+            display: ['Bebas Neue', 'sans-serif'],
+            body: ['Inter', 'sans-serif'],
+            mono: ['JetBrains Mono', 'monospace']
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    ::selection { background: #f97316; color: #fff; }
+    html { color-scheme: dark; }
+    body {
+      background:
+        radial-gradient(circle at 82% 8%, rgba(34, 197, 94, 0.10), transparent 26rem),
+        radial-gradient(circle at 8% 22%, rgba(249, 115, 22, 0.12), transparent 24rem),
+        linear-gradient(180deg, #020617 0%, #07111f 45%, #020617 100%);
+    }
+    .sector-grid {
+      background-image:
+        linear-gradient(rgba(148, 163, 184, 0.07) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(148, 163, 184, 0.07) 1px, transparent 1px);
+      background-size: 48px 48px;
+      background-position: center;
+    }
+    .grain::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.82' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.07'/%3E%3C/svg%3E");
+      pointer-events: none;
+      z-index: 1;
+    }
+    .photo-panel {
+      background: linear-gradient(180deg, rgba(248, 250, 252, 0.08), rgba(15, 23, 42, 0.92)), #0f172a;
+    }
+    .detail-media {
+      background: linear-gradient(180deg, rgba(248, 250, 252, 0.08), rgba(2, 6, 23, 0.78)), #0f172a;
+      overflow: hidden;
+    }
+    .mobile-bottom-cta { transform: translateY(120%); transition: transform 260ms ease; }
+    .mobile-bottom-cta.visible { transform: translateY(0); }
+    .horizontal-row { scrollbar-width: none; }
+    .horizontal-row::-webkit-scrollbar { display: none; }
+    @media (min-width: 1024px) { .desktop-sticky { position: sticky; top: 6rem; } }
+  </style>
+</head>
+<body class="bg-dark-950 text-white font-body antialiased overflow-x-hidden pb-24 md:pb-0">
+  <nav id="navbar" class="fixed top-0 z-50 w-full transition-all duration-300">
+    <div class="mx-auto max-w-7xl px-6 lg:px-8">
+      <div class="flex h-20 items-center justify-between">
+        <a href="index.html" class="flex items-center gap-3">
+          <img src="images/S-supply.png" alt="Supply" class="h-10 w-10 object-contain">
+          <div>
+            <span class="font-display text-2xl text-white">SUPPLY</span>
+            <span class="block -mt-1 font-mono text-[10px] uppercase text-dark-400">EPIs & Uniformes</span>
+          </div>
+        </a>
+        <div class="hidden items-center gap-7 md:flex">
+          <a href="#conjunto" class="text-sm text-dark-300 transition-colors hover:text-white">Conjunto</a>
+          <a href="#rotinas" class="text-sm text-dark-300 transition-colors hover:text-white">Rotinas</a>
+          <a href="#tecnica" class="text-sm text-dark-300 transition-colors hover:text-white">Técnica</a>
+          <a href="#contato" class="text-sm text-dark-300 transition-colors hover:text-white">Contato</a>
+          <a href="https://wa.me/557534712333?text=Ol%C3%A1%2C%20quero%20or%C3%A7ar%20a%20linha%20de%20epis%20com%20a%20Supply" target="_blank" class="inline-flex items-center gap-2 rounded-lg bg-supply-500 px-5 py-2.5 text-sm font-semibold text-white transition-all hover:bg-supply-600 hover:shadow-lg hover:shadow-supply-500/25">
+            Solicitar orçamento
+            <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+          </a>
+        </div>
+        <button class="p-2 text-white md:hidden" aria-label="Abrir menu" onclick="document.getElementById('mobile-menu').classList.toggle('hidden')">
+          <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+        </button>
+      </div>
+    </div>
+    <div id="mobile-menu" class="hidden border-t border-white/5 bg-dark-950/96 px-6 py-5 backdrop-blur-xl md:hidden">
+      <div class="space-y-4">
+        <a href="#conjunto" class="block text-dark-200">Conjunto</a>
+        <a href="#rotinas" class="block text-dark-200">Rotinas</a>
+        <a href="#tecnica" class="block text-dark-200">Técnica</a>
+        <a href="#contato" class="block text-dark-200">Contato</a>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <section class="relative min-h-screen overflow-hidden grain sector-grid">
+      <div class="absolute inset-0 bg-[linear-gradient(180deg,rgba(2,6,23,0.54),rgba(2,6,23,0.98))]"></div>
+      <div class="relative z-10 mx-auto grid min-h-screen max-w-7xl items-center gap-10 px-6 pb-14 pt-28 lg:grid-cols-[0.92fr_1.08fr] lg:px-8 lg:pt-24">
+        <div class="max-w-3xl">
+          <a href="index.html" class="mb-8 inline-flex items-center gap-2 font-mono text-xs uppercase text-dark-400 transition-colors hover:text-supply-400">
+            <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
+            Voltar
+          </a>
+          <p class="mb-5 font-mono text-xs uppercase text-supply-400">Linha de EPIs</p>
+          <h1 class="font-display text-[4.1rem] leading-[0.92] text-white sm:text-[5.6rem] lg:text-[7.25rem]">
+            <span class="block">EPI</span>
+            <span class="block text-dark-300">POR RISCO</span>
+            <span class="block text-supply-500">NÃO POR LISTA</span>
+          </h1>
+          <p class="mt-7 max-w-2xl text-lg leading-relaxed text-dark-300 md:text-xl">Capacetes, luvas, calçados, óculos, respiradores e proteção auditiva organizados conforme a exposição real da operação.</p>
+          <div class="mt-8 grid gap-3 sm:flex">
+            <a href="https://wa.me/557534712333?text=Ol%C3%A1%2C%20quero%20or%C3%A7ar%20a%20linha%20de%20epis%20com%20a%20Supply" target="_blank" class="inline-flex items-center justify-center gap-2 rounded-lg bg-supply-500 px-7 py-4 text-base font-semibold text-white transition-all hover:bg-supply-600">
+              Montar lista técnica de EPIs
+              <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+            </a>
+            <a href="#conjunto" class="inline-flex items-center justify-center gap-2 rounded-lg border border-white/10 px-7 py-4 text-base font-semibold text-dark-200 transition-colors hover:border-supply-500/50 hover:text-white">
+              Ver composição
+              <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <div class="relative">
+          <div class="photo-panel rounded-lg border border-white/10 p-4 shadow-2xl shadow-dark-950/40">
+            <div class="relative overflow-hidden rounded-lg bg-dark-900">
+              <img src="images/epis-3/hero-v2.jpg" alt="Composição profissional de equipamentos de proteção individual." class="h-[35rem] w-full object-cover object-center md:h-[42rem]" decoding="async" fetchpriority="high">
+              <div class="absolute inset-0 bg-gradient-to-t from-dark-950 via-transparent to-transparent"></div>
+            </div>
+          </div>
+          <div class="absolute left-0 top-10 hidden rounded-lg border border-white/10 bg-dark-950/88 px-4 py-3 backdrop-blur-xl lg:block">
+            <p class="font-mono text-[10px] uppercase text-dark-500">Base</p>
+            <p class="text-sm font-semibold text-white">Cabeça, mãos e pés</p>
+          </div>
+          <div class="absolute right-0 top-44 hidden rounded-lg border border-mint-400/25 bg-mint-400/10 px-4 py-3 backdrop-blur-xl lg:block">
+            <p class="font-mono text-[10px] uppercase text-mint-300">Risco</p>
+            <p class="text-sm font-semibold text-white">Ruído e partículas</p>
+          </div>
+          <div class="absolute bottom-8 left-4 hidden rounded-lg border border-supply-500/25 bg-supply-500/10 px-4 py-3 backdrop-blur-xl lg:block">
+            <p class="font-mono text-[10px] uppercase text-supply-400">Entrega</p>
+            <p class="text-sm font-semibold text-white">CA e reposição</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="border-y border-white/5 bg-dark-950/92 py-10">
+      <div class="mx-auto grid max-w-7xl gap-4 px-6 sm:grid-cols-2 lg:grid-cols-4 lg:px-8">
+        <div class="rounded-lg border border-white/8 bg-dark-900/50 p-5">
+          <p class="font-display text-4xl text-white">01</p>
+          <p class="mt-1 text-sm text-dark-300">Mapa de risco por função.</p>
+        </div>
+        <div class="rounded-lg border border-white/8 bg-dark-900/50 p-5">
+          <p class="font-display text-4xl text-supply-500">02</p>
+          <p class="mt-1 text-sm text-dark-300">Seleção por aplicação e CA.</p>
+        </div>
+        <div class="rounded-lg border border-white/8 bg-dark-900/50 p-5">
+          <p class="font-display text-4xl text-mint-300">03</p>
+          <p class="mt-1 text-sm text-dark-300">Tamanhos, modelos e consumo.</p>
+        </div>
+        <div class="rounded-lg border border-white/8 bg-dark-900/50 p-5">
+          <p class="font-display text-4xl text-ink-300">04</p>
+          <p class="mt-1 text-sm text-dark-300">Entrega e reposição controlada.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="conjunto" class="relative border-b border-white/5 bg-dark-950/82 py-20 md:py-28">
+      <div class="mx-auto max-w-7xl px-6 lg:px-8">
+        <div class="grid gap-10 lg:grid-cols-[0.78fr_1.22fr] lg:items-start">
+          <div class="desktop-sticky">
+            <p class="mb-4 font-mono text-xs uppercase text-supply-400">O que compõe</p>
+            <h2 class="font-display text-5xl leading-none text-white md:text-7xl">O KIT CERTO DEPENDE DO RISCO.</h2>
+            <p class="mt-5 text-base leading-relaxed text-dark-400 md:text-lg">EPIs funcionam melhor quando são organizados por exposição, não apenas por uma lista genérica de compra.</p>
+          </div>
+          <div class="grid gap-4">
+            <article class="rounded-lg border border-white/8 bg-dark-900/72 p-5 md:p-6">
+              <div class="grid gap-5 md:grid-cols-[9rem_1fr] md:items-center">
+                <div class="detail-media flex h-36 items-center justify-center rounded-lg">
+                  <img src="images/epis-3/detail-cabeca-v2.jpg" alt="Capacete, óculos e proteção auditiva para cabeça e face." class="h-full w-full object-cover object-center" loading="lazy" decoding="async">
+                </div>
+                <div>
+                  <p class="font-mono text-xs uppercase text-supply-400">Cabeça e face</p>
+                  <h3 class="mt-2 font-display text-4xl leading-none text-white">CAPACETES, ÓCULOS E PROTEÇÃO FACIAL</h3>
+                  <p class="mt-3 text-sm leading-relaxed text-dark-300 md:text-base">Proteção para impacto, respingo, partículas, projeção, poeira e circulação em áreas operacionais.</p>
+                </div>
+              </div>
+            </article>
+
+            <article class="rounded-lg border border-white/8 bg-dark-900/72 p-5 md:p-6">
+              <div class="grid gap-5 md:grid-cols-[9rem_1fr] md:items-center">
+                <div class="detail-media flex h-36 items-center justify-center rounded-lg">
+                  <img src="images/epis-3/detail-maos-v3.jpg" alt="Luvas profissionais para proteção contra diferentes tipos de exposição." class="h-full w-full object-cover object-center" loading="lazy" decoding="async">
+                </div>
+                <div>
+                  <p class="font-mono text-xs uppercase text-mint-300">Mãos</p>
+                  <h3 class="mt-2 font-display text-4xl leading-none text-white">LUVAS POR TIPO DE EXPOSIÇÃO</h3>
+                  <p class="mt-3 text-sm leading-relaxed text-dark-300 md:text-base">A escolha muda conforme corte, abrasão, calor, produto químico, umidade, aderência e precisão do trabalho.</p>
+                </div>
+              </div>
+            </article>
+
+            <article class="rounded-lg border border-white/8 bg-dark-900/72 p-5 md:p-6">
+              <div class="grid gap-5 md:grid-cols-[9rem_1fr] md:items-center">
+                <div class="detail-media flex h-36 items-center justify-center rounded-lg">
+                  <img src="images/epis-3/detail-pes-v3.jpg" alt="Calçados de segurança, respirador e protetor auditivo para operação." class="h-full w-full object-cover object-center" loading="lazy" decoding="async">
+                </div>
+                <div>
+                  <p class="font-mono text-xs uppercase text-ink-300">Pés e apoio</p>
+                  <h3 class="mt-2 font-display text-4xl leading-none text-white">CALÇADOS, RESPIRADORES E AUDITIVOS</h3>
+                  <p class="mt-3 text-sm leading-relaxed text-dark-300 md:text-base">O kit se completa com bota, respirador, protetor auricular e itens específicos do ambiente.</p>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="rotinas" class="relative py-20 md:py-28">
+      <div class="mx-auto max-w-7xl px-6 lg:px-8">
+        <div class="mb-10 max-w-3xl">
+          <p class="mb-4 font-mono text-xs uppercase text-supply-400">Rotinas atendidas</p>
+          <h2 class="font-display text-5xl leading-none text-white md:text-7xl">CADA RISCO PEDE UM EPI DIFERENTE.</h2>
+          <p class="mt-5 text-base leading-relaxed text-dark-400 md:text-lg">A mesma empresa pode ter riscos diferentes por setor, turno, função, ambiente e intensidade de exposição.</p>
+        </div>
+        <div class="horizontal-row flex snap-x gap-4 overflow-x-auto pb-2 lg:grid lg:grid-cols-4 lg:overflow-visible">
+          <article class="min-w-[18rem] snap-start rounded-lg border border-white/8 bg-dark-900 p-5">
+            <p class="font-mono text-xs uppercase text-supply-400">Impacto</p>
+            <h3 class="mt-3 font-display text-4xl leading-none text-white">PROJEÇÃO</h3>
+            <p class="mt-4 text-sm leading-relaxed text-dark-400">Capacete, óculos, viseira e proteção facial para operação com partículas ou respingos.</p>
+            <div class="mt-5 flex flex-wrap gap-2"><span class="rounded-md bg-dark-800 px-2.5 py-1 text-xs text-dark-200">Capacete</span><span class="rounded-md bg-dark-800 px-2.5 py-1 text-xs text-dark-200">Óculos</span><span class="rounded-md bg-dark-800 px-2.5 py-1 text-xs text-dark-200">Viseira</span></div>
+          </article>
+
+          <article class="min-w-[18rem] snap-start rounded-lg border border-white/8 bg-dark-900 p-5">
+            <p class="font-mono text-xs uppercase text-mint-300">Mecânico</p>
+            <h3 class="mt-3 font-display text-4xl leading-none text-white">CORTE E ABRASÃO</h3>
+            <p class="mt-4 text-sm leading-relaxed text-dark-400">Luvas e mangas adequadas ao material, à ferramenta e à necessidade de tato.</p>
+            <div class="mt-5 flex flex-wrap gap-2"><span class="rounded-md bg-dark-800 px-2.5 py-1 text-xs text-dark-200">Luvas</span><span class="rounded-md bg-dark-800 px-2.5 py-1 text-xs text-dark-200">Abrasão</span><span class="rounded-md bg-dark-800 px-2.5 py-1 text-xs text-dark-200">Corte</span></div>
+          </article>
+
+          <article class="min-w-[18rem] snap-start rounded-lg border border-white/8 bg-dark-900 p-5">
+            <p class="font-mono text-xs uppercase text-ink-300">Deslocamento</p>
+            <h3 class="mt-3 font-display text-4xl leading-none text-white">PÉS E PISO</h3>
+            <p class="mt-4 text-sm leading-relaxed text-dark-400">Calçados definidos por biqueira, solado, umidade, óleo, impacto e conforto.</p>
+            <div class="mt-5 flex flex-wrap gap-2"><span class="rounded-md bg-dark-800 px-2.5 py-1 text-xs text-dark-200">Bota</span><span class="rounded-md bg-dark-800 px-2.5 py-1 text-xs text-dark-200">Solado</span><span class="rounded-md bg-dark-800 px-2.5 py-1 text-xs text-dark-200">Biqueira</span></div>
+          </article>
+
+          <article class="min-w-[18rem] snap-start rounded-lg border border-white/8 bg-dark-900 p-5">
+            <p class="font-mono text-xs uppercase text-caution-300">Ambiente</p>
+            <h3 class="mt-3 font-display text-4xl leading-none text-white">POEIRA E RUÍDO</h3>
+            <p class="mt-4 text-sm leading-relaxed text-dark-400">Respiradores e protetores auditivos dimensionados pela exposição da rotina.</p>
+            <div class="mt-5 flex flex-wrap gap-2"><span class="rounded-md bg-dark-800 px-2.5 py-1 text-xs text-dark-200">Respirador</span><span class="rounded-md bg-dark-800 px-2.5 py-1 text-xs text-dark-200">Auricular</span><span class="rounded-md bg-dark-800 px-2.5 py-1 text-xs text-dark-200">Filtro</span></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="tecnica" class="relative border-y border-white/5 bg-dark-950/82 py-20 md:py-28">
+      <div class="mx-auto max-w-7xl px-6 lg:px-8">
+        <div class="grid gap-8 lg:grid-cols-[0.74fr_1.26fr] lg:items-start">
+          <div>
+            <p class="mb-4 font-mono text-xs uppercase text-supply-400">Critério técnico</p>
+            <h2 class="font-display text-5xl leading-none text-white md:text-7xl">CA SOZINHO NÃO RESOLVE A COMPRA.</h2>
+            <p class="mt-5 text-base leading-relaxed text-dark-400 md:text-lg">Além da documentação, é preciso escolher modelo, conforto, durabilidade e reposição compatíveis com o uso real.</p>
+          </div>
+          <div class="grid gap-4 md:grid-cols-2">
+            <article class="rounded-lg border border-white/8 bg-dark-900/72 p-6">
+              <p class="font-display text-5xl text-supply-500">CA</p>
+              <h3 class="mt-3 text-lg font-semibold text-white">Documentação</h3>
+              <p class="mt-3 text-sm leading-relaxed text-dark-400">Itens com Certificado de Aprovação quando aplicável e dados para controle interno.</p>
+            </article>
+
+            <article class="rounded-lg border border-white/8 bg-dark-900/72 p-6">
+              <p class="font-display text-5xl text-mint-300">FIT</p>
+              <h3 class="mt-3 text-lg font-semibold text-white">Adesão ao uso</h3>
+              <p class="mt-3 text-sm leading-relaxed text-dark-400">Conforto, tamanho e ergonomia influenciam se o colaborador usa o EPI corretamente.</p>
+            </article>
+
+            <article class="rounded-lg border border-white/8 bg-dark-900/72 p-6">
+              <p class="font-display text-5xl text-ink-300">RISK</p>
+              <h3 class="mt-3 text-lg font-semibold text-white">Compatibilidade</h3>
+              <p class="mt-3 text-sm leading-relaxed text-dark-400">O EPI precisa conversar com uniforme, atividade, clima, ferramenta e tempo de exposição.</p>
+            </article>
+
+            <article class="rounded-lg border border-white/8 bg-dark-900/72 p-6">
+              <p class="font-display text-5xl text-white">KIT</p>
+              <h3 class="mt-3 text-lg font-semibold text-white">Reposição</h3>
+              <p class="mt-3 text-sm leading-relaxed text-dark-400">Lista organizada por função evita compra solta e facilita controle de estoque.</p>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contato" class="relative overflow-hidden py-20 md:py-28 grain sector-grid">
+      <div class="absolute inset-0 bg-dark-950/88"></div>
+      <div class="relative z-10 mx-auto max-w-5xl px-6 text-center lg:px-8">
+        <p class="mb-4 font-mono text-xs uppercase text-supply-400">Atendimento consultivo</p>
+        <h2 class="font-display text-5xl leading-none text-white md:text-7xl">ORCE PELO MAPA DE RISCO.</h2>
+        <p class="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-dark-300">Informe funções, riscos, quantidade de colaboradores e itens já utilizados. A Supply organiza a lista por aplicação.</p>
+        <div class="mt-9 grid gap-3 sm:flex sm:justify-center">
+          <a href="https://wa.me/557534712333?text=Ol%C3%A1%2C%20quero%20or%C3%A7ar%20a%20linha%20de%20epis%20com%20a%20Supply" target="_blank" class="inline-flex items-center justify-center gap-2 rounded-lg bg-supply-500 px-7 py-4 font-semibold text-white transition-colors hover:bg-supply-600">
+            Solicitar orçamento
+            <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+          </a>
+          <a href="https://wa.me/557534712333?text=Ol%C3%A1%2C%20quero%20falar%20com%20um%20especialista%20sobre%20epis" target="_blank" class="inline-flex items-center justify-center rounded-lg border border-white/10 px-7 py-4 font-semibold text-dark-200 transition-colors hover:border-white/25 hover:text-white">Falar com especialista</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="border-t border-white/5 bg-dark-950 py-10">
+    <div class="mx-auto flex max-w-7xl flex-col items-center justify-between gap-5 px-6 text-center md:flex-row md:text-left lg:px-8">
+      <a href="index.html" class="flex items-center gap-3">
+        <img src="images/S-supply.png" alt="Supply" class="h-8 w-8 object-contain">
+        <span class="font-display text-2xl text-white">SUPPLY</span>
+      </a>
+      <p class="text-sm text-dark-500">Feira de Santana - BA | EPIs e fardamentos profissionais</p>
+    </div>
+  </footer>
+
+  <div id="mobile-cta" class="mobile-bottom-cta fixed inset-x-0 bottom-0 z-50 border-t border-white/10 bg-dark-950/96 p-4 backdrop-blur-xl md:hidden">
+    <a href="https://wa.me/557534712333?text=Ol%C3%A1%2C%20quero%20or%C3%A7ar%20a%20linha%20de%20epis%20com%20a%20Supply" target="_blank" class="flex w-full items-center justify-center rounded-lg bg-supply-500 px-5 py-3.5 font-semibold text-white">Orçar EPIs</a>
+  </div>
+
+  <script>
+    const navbar = document.getElementById('navbar');
+    const mobileCta = document.getElementById('mobile-cta');
+    function updateChrome() {
+      const scrolled = window.scrollY > 32;
+      navbar.classList.toggle('bg-dark-950/92', scrolled);
+      navbar.classList.toggle('backdrop-blur-xl', scrolled);
+      navbar.classList.toggle('border-b', scrolled);
+      navbar.classList.toggle('border-white/5', scrolled);
+      mobileCta.classList.toggle('visible', window.scrollY > 480);
+    }
+    window.addEventListener('scroll', updateChrome, { passive: true });
+    updateChrome();
+    document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+      anchor.addEventListener('click', (event) => {
+        const target = document.querySelector(anchor.getAttribute('href'));
+        if (!target) return;
+        event.preventDefault();
+        const y = target.getBoundingClientRect().top + window.scrollY - 76;
+        window.scrollTo({ top: y, behavior: 'smooth' });
+        const menu = document.getElementById('mobile-menu');
+        if (menu && !menu.classList.contains('hidden')) menu.classList.add('hidden');
+      });
+    });
+  </script>
+</body>
+</html>

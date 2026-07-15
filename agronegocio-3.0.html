@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Uniformes e EPIs para sol, campo, defensivos, manejo rural e equipes de fazenda.">
+  <meta property="og:title" content="Agronegócio - Supply EPIs e Fardamentos Profissionais">
+  <meta property="og:description" content="Proteção para campo, exposição solar, defensivos e manejo rural organizada por rotina.">
+  <meta property="og:type" content="website">
+  <title>Agronegócio - Supply EPIs e Fardamentos Profissionais</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            supply: { 400: '#fb923c', 500: '#f97316', 600: '#ea580c' },
+            dark: { 200: '#e2e8f0', 300: '#cbd5e1', 400: '#94a3b8', 500: '#64748b', 600: '#475569', 700: '#334155', 800: '#1e293b', 900: '#0f172a', 950: '#020617' },
+            mint: { 300: '#86efac', 400: '#4ade80' },
+            ink: { 300: '#93c5fd', 400: '#60a5fa' },
+            caution: { 300: '#fde047' }
+          },
+          fontFamily: {
+            display: ['Bebas Neue', 'sans-serif'],
+            body: ['Inter', 'sans-serif'],
+            mono: ['JetBrains Mono', 'monospace']
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    ::selection { background: #f97316; color: #fff; }
+    html { color-scheme: dark; }
+    body {
+      background:
+        radial-gradient(circle at 82% 8%, rgba(34, 197, 94, 0.10), transparent 26rem),
+        radial-gradient(circle at 8% 22%, rgba(249, 115, 22, 0.12), transparent 24rem),
+        linear-gradient(180deg, #020617 0%, #07111f 45%, #020617 100%);
+    }
+    .sector-grid {
+      background-image:
+        linear-gradient(rgba(148, 163, 184, 0.07) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(148, 163, 184, 0.07) 1px, transparent 1px);
+      background-size: 48px 48px;
+      background-position: center;
+    }
+    .grain::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.82' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.07'/%3E%3C/svg%3E");
+      pointer-events: none;
+      z-index: 1;
+    }
+    .photo-panel {
+      background: linear-gradient(180deg, rgba(248, 250, 252, 0.08), rgba(15, 23, 42, 0.92)), #0f172a;
+    }
+    .detail-media {
+      background: linear-gradient(180deg, rgba(248, 250, 252, 0.08), rgba(2, 6, 23, 0.78)), #0f172a;
+      overflow: hidden;
+    }
+    .mobile-bottom-cta { transform: translateY(120%); transition: transform 260ms ease; }
+    .mobile-bottom-cta.visible { transform: translateY(0); }
+    .horizontal-row { scrollbar-width: none; }
+    .horizontal-row::-webkit-scrollbar { display: none; }
+    @media (min-width: 1024px) { .desktop-sticky { position: sticky; top: 6rem; } }
+  </style>
+</head>
+<body class="bg-dark-950 text-white font-body antialiased overflow-x-hidden pb-24 md:pb-0">
+  <nav id="navbar" class="fixed top-0 z-50 w-full transition-all duration-300">
+    <div class="mx-auto max-w-7xl px-6 lg:px-8">
+      <div class="flex h-20 items-center justify-between">
+        <a href="index.html" class="flex items-center gap-3">
+          <img src="images/S-supply.png" alt="Supply" class="h-10 w-10 object-contain">
+          <div>
+            <span class="font-display text-2xl text-white">SUPPLY</span>
+            <span class="block -mt-1 font-mono text-[10px] uppercase text-dark-400">EPIs & Uniformes</span>
+          </div>
+        </a>
+        <div class="hidden items-center gap-7 md:flex">
+          <a href="#conjunto" class="text-sm text-dark-300 transition-colors hover:text-white">Conjunto</a>
+          <a href="#rotinas" class="text-sm text-dark-300 transition-colors hover:text-white">Rotinas</a>
+          <a href="#tecnica" class="text-sm text-dark-300 transition-colors hover:text-white">Técnica</a>
+          <a href="#contato" class="text-sm text-dark-300 transition-colors hover:text-white">Contato</a>
+          <a href="https://wa.me/557534712333?text=Ol%C3%A1%2C%20quero%20or%C3%A7ar%20a%20linha%20de%20agronegocio%20com%20a%20Supply" target="_blank" class="inline-flex items-center gap-2 rounded-lg bg-supply-500 px-5 py-2.5 text-sm font-semibold text-white transition-all hover:bg-supply-600 hover:shadow-lg hover:shadow-supply-500/25">
+            Solicitar orçamento
+            <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+          </a>
+        </div>
+        <button class="p-2 text-white md:hidden" aria-label="Abrir menu" onclick="document.getElementById('mobile-menu').classList.toggle('hidden')">
+          <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+        </button>
+      </div>
+    </div>
+    <div id="mobile-menu" class="hidden border-t border-white/5 bg-dark-950/96 px-6 py-5 backdrop-blur-xl md:hidden">
+      <div class="space-y-4">
+        <a href="#conjunto" class="block text-dark-200">Conjunto</a>
+        <a href="#rotinas" class="block text-dark-200">Rotinas</a>
+        <a href="#tecnica" class="block text-dark-200">Técnica</a>
+        <a href="#contato" class="block text-dark-200">Contato</a>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <section class="relative min-h-screen overflow-hidden grain sector-grid">
+      <div class="absolute inset-0 bg-[linear-gradient(180deg,rgba(2,6,23,0.54),rgba(2,6,23,0.98))]"></div>
+      <div class="relative z-10 mx-auto grid min-h-screen max-w-7xl items-center gap-10 px-6 pb-14 pt-28 lg:grid-cols-[0.92fr_1.08fr] lg:px-8 lg:pt-24">
+        <div class="max-w-3xl">
+          <a href="index.html" class="mb-8 inline-flex items-center gap-2 font-mono text-xs uppercase text-dark-400 transition-colors hover:text-supply-400">
+            <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
+            Voltar
+          </a>
+          <p class="mb-5 font-mono text-xs uppercase text-supply-400">Setor agronegócio</p>
+          <h1 class="font-display text-[4.1rem] leading-[0.92] text-white sm:text-[5.6rem] lg:text-[7.25rem]">
+            <span class="block">CAMPO</span>
+            <span class="block text-dark-300">PROTEGIDO</span>
+            <span class="block text-supply-500">O DIA TODO</span>
+          </h1>
+          <p class="mt-7 max-w-2xl text-lg leading-relaxed text-dark-300 md:text-xl">Uniformes para sol, defensivos, manejo e operação rural, definidos pela exposição e pela função de cada equipe.</p>
+          <div class="mt-8 grid gap-3 sm:flex">
+            <a href="https://wa.me/557534712333?text=Ol%C3%A1%2C%20quero%20or%C3%A7ar%20a%20linha%20de%20agronegocio%20com%20a%20Supply" target="_blank" class="inline-flex items-center justify-center gap-2 rounded-lg bg-supply-500 px-7 py-4 text-base font-semibold text-white transition-all hover:bg-supply-600">
+              Montar orçamento rural
+              <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+            </a>
+            <a href="#conjunto" class="inline-flex items-center justify-center gap-2 rounded-lg border border-white/10 px-7 py-4 text-base font-semibold text-dark-200 transition-colors hover:border-supply-500/50 hover:text-white">
+              Ver composição
+              <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <div class="relative">
+          <div class="photo-panel rounded-lg border border-white/10 p-4 shadow-2xl shadow-dark-950/40">
+            <div class="relative overflow-hidden rounded-lg bg-dark-900">
+              <img src="images/agro-3/hero-v2-logo.jpg" alt="Equipe rural com uniformes profissionais personalizados para o campo." class="h-[35rem] w-full object-cover object-center md:h-[42rem]" decoding="async" fetchpriority="high">
+              <div class="absolute inset-0 bg-gradient-to-t from-dark-950 via-transparent to-transparent"></div>
+            </div>
+          </div>
+          <div class="absolute left-0 top-10 hidden rounded-lg border border-white/10 bg-dark-950/88 px-4 py-3 backdrop-blur-xl lg:block">
+            <p class="font-mono text-[10px] uppercase text-dark-500">Base</p>
+            <p class="text-sm font-semibold text-white">UV e conforto</p>
+          </div>
+          <div class="absolute right-0 top-44 hidden rounded-lg border border-mint-400/25 bg-mint-400/10 px-4 py-3 backdrop-blur-xl lg:block">
+            <p class="font-mono text-[10px] uppercase text-mint-300">Risco</p>
+            <p class="text-sm font-semibold text-white">Defensivos</p>
+          </div>
+          <div class="absolute bottom-8 left-4 hidden rounded-lg border border-supply-500/25 bg-supply-500/10 px-4 py-3 backdrop-blur-xl lg:block">
+            <p class="font-mono text-[10px] uppercase text-supply-400">Entrega</p>
+            <p class="text-sm font-semibold text-white">Turma ou fazenda</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="border-y border-white/5 bg-dark-950/92 py-10">
+      <div class="mx-auto grid max-w-7xl gap-4 px-6 sm:grid-cols-2 lg:grid-cols-4 lg:px-8">
+        <div class="rounded-lg border border-white/8 bg-dark-900/50 p-5">
+          <p class="font-display text-4xl text-white">01</p>
+          <p class="mt-1 text-sm text-dark-300">Tipo de cultura, clima e exposição.</p>
+        </div>
+        <div class="rounded-lg border border-white/8 bg-dark-900/50 p-5">
+          <p class="font-display text-4xl text-supply-500">02</p>
+          <p class="mt-1 text-sm text-dark-300">Proteção solar, tecido e modelagem.</p>
+        </div>
+        <div class="rounded-lg border border-white/8 bg-dark-900/50 p-5">
+          <p class="font-display text-4xl text-mint-300">03</p>
+          <p class="mt-1 text-sm text-dark-300">Defensivos, botas, luvas e respiradores.</p>
+        </div>
+        <div class="rounded-lg border border-white/8 bg-dark-900/50 p-5">
+          <p class="font-display text-4xl text-ink-300">04</p>
+          <p class="mt-1 text-sm text-dark-300">Entrega por turma, fazenda ou função.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="conjunto" class="relative border-b border-white/5 bg-dark-950/82 py-20 md:py-28">
+      <div class="mx-auto max-w-7xl px-6 lg:px-8">
+        <div class="grid gap-10 lg:grid-cols-[0.78fr_1.22fr] lg:items-start">
+          <div class="desktop-sticky">
+            <p class="mb-4 font-mono text-xs uppercase text-supply-400">O que compõe</p>
+            <h2 class="font-display text-5xl leading-none text-white md:text-7xl">DO SOL AO MANUSEIO DE DEFENSIVOS.</h2>
+            <p class="mt-5 text-base leading-relaxed text-dark-400 md:text-lg">No campo, a composição muda conforme exposição solar, produto químico, terreno, água, lama e jornada.</p>
+          </div>
+          <div class="grid gap-4">
+            <article class="rounded-lg border border-white/8 bg-dark-900/72 p-5 md:p-6">
+              <div class="grid gap-5 md:grid-cols-[9rem_1fr] md:items-center">
+                <div class="detail-media flex h-36 items-center justify-center rounded-lg">
+                  <img src="images/agro-3/detail-uv-v2-logo.jpg" alt="Camisa profissional com proteção UV para trabalho no campo." class="h-full w-full object-cover object-center" loading="lazy" decoding="async">
+                </div>
+                <div>
+                  <p class="font-mono text-xs uppercase text-supply-400">Rotina exposta</p>
+                  <h3 class="mt-2 font-display text-4xl leading-none text-white">CONJUNTO DE CAMPO COM PROTEÇÃO UV</h3>
+                  <p class="mt-3 text-sm leading-relaxed text-dark-300 md:text-base">Camisa, calça ou conjunto leve para jornadas externas, com foco em conforto térmico e proteção solar.</p>
+                </div>
+              </div>
+            </article>
+
+            <article class="rounded-lg border border-white/8 bg-dark-900/72 p-5 md:p-6">
+              <div class="grid gap-5 md:grid-cols-[9rem_1fr] md:items-center">
+                <div class="detail-media flex h-36 items-center justify-center rounded-lg">
+                  <img src="images/agro-3/detail-defensivos-v2-logo.jpg" alt="Vestimenta profissional e EPIs para aplicação de defensivos agrícolas." class="h-full w-full object-cover object-center" loading="lazy" decoding="async">
+                </div>
+                <div>
+                  <p class="font-mono text-xs uppercase text-mint-300">Agroquímicos</p>
+                  <h3 class="mt-2 font-display text-4xl leading-none text-white">VESTIMENTA PARA DEFENSIVOS</h3>
+                  <p class="mt-3 text-sm leading-relaxed text-dark-300 md:text-base">Peças de proteção para manuseio e aplicação, combinadas com luvas, botas, respirador e óculos conforme a operação.</p>
+                </div>
+              </div>
+            </article>
+
+            <article class="rounded-lg border border-white/8 bg-dark-900/72 p-5 md:p-6">
+              <div class="grid gap-5 md:grid-cols-[9rem_1fr] md:items-center">
+                <div class="detail-media flex h-36 items-center justify-center rounded-lg">
+                  <img src="images/agro-3/detail-bota-v2.jpg" alt="Botas, perneiras e luvas para a rotina rural." class="h-full w-full object-cover object-center" loading="lazy" decoding="async">
+                </div>
+                <div>
+                  <p class="font-mono text-xs uppercase text-ink-300">Terreno e apoio</p>
+                  <h3 class="mt-2 font-display text-4xl leading-none text-white">BOTAS, LUVAS E EPIs RURAIS</h3>
+                  <p class="mt-3 text-sm leading-relaxed text-dark-300 md:text-base">O kit de apoio completa a roupa quando há lama, umidade, atrito, respingo, poeira ou contato com ferramentas.</p>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="rotinas" class="relative py-20 md:py-28">
+      <div class="mx-auto max-w-7xl px-6 lg:px-8">
+        <div class="mb-10 max-w-3xl">
+          <p class="mb-4 font-mono text-xs uppercase text-supply-400">Rotinas atendidas</p>
+          <h2 class="font-display text-5xl leading-none text-white md:text-7xl">A EXPOSIÇÃO DEFINE A ROUPA.</h2>
+          <p class="mt-5 text-base leading-relaxed text-dark-400 md:text-lg">A mesma fazenda pode exigir soluções diferentes para lavoura, defensivos, manejo, colheita e manutenção.</p>
+        </div>
+        <div class="horizontal-row flex snap-x gap-4 overflow-x-auto pb-2 lg:grid lg:grid-cols-4 lg:overflow-visible">
+          <article class="min-w-[18rem] snap-start rounded-lg border border-white/8 bg-dark-900 p-5">
+            <p class="font-mono text-xs uppercase text-supply-400">Sol e jornada</p>
+            <h3 class="mt-3 font-display text-4xl leading-none text-white">LAVOURA</h3>
+            <p class="mt-4 text-sm leading-relaxed text-dark-400">Camisas UV, calças leves e peças respiráveis para exposição prolongada.</p>
+            <div class="mt-5 flex flex-wrap gap-2"><span class="rounded-md bg-dark-800 px-2.5 py-1 text-xs text-dark-200">UV 50+</span><span class="rounded-md bg-dark-800 px-2.5 py-1 text-xs text-dark-200">Leve</span><span class="rounded-md bg-dark-800 px-2.5 py-1 text-xs text-dark-200">Manga longa</span></div>
+          </article>
+
+          <article class="min-w-[18rem] snap-start rounded-lg border border-white/8 bg-dark-900 p-5">
+            <p class="font-mono text-xs uppercase text-mint-300">NR31</p>
+            <h3 class="mt-3 font-display text-4xl leading-none text-white">DEFENSIVOS</h3>
+            <p class="mt-4 text-sm leading-relaxed text-dark-400">Barreira adequada para aplicação e manuseio, com EPIs complementares.</p>
+            <div class="mt-5 flex flex-wrap gap-2"><span class="rounded-md bg-dark-800 px-2.5 py-1 text-xs text-dark-200">Avental</span><span class="rounded-md bg-dark-800 px-2.5 py-1 text-xs text-dark-200">Luvas</span><span class="rounded-md bg-dark-800 px-2.5 py-1 text-xs text-dark-200">Respirador</span></div>
+          </article>
+
+          <article class="min-w-[18rem] snap-start rounded-lg border border-white/8 bg-dark-900 p-5">
+            <p class="font-mono text-xs uppercase text-ink-300">Campo</p>
+            <h3 class="mt-3 font-display text-4xl leading-none text-white">MANEJO</h3>
+            <p class="mt-4 text-sm leading-relaxed text-dark-400">Peças resistentes para pecuária, irrigação, ronda, manutenção e apoio.</p>
+            <div class="mt-5 flex flex-wrap gap-2"><span class="rounded-md bg-dark-800 px-2.5 py-1 text-xs text-dark-200">Bota</span><span class="rounded-md bg-dark-800 px-2.5 py-1 text-xs text-dark-200">Calça</span><span class="rounded-md bg-dark-800 px-2.5 py-1 text-xs text-dark-200">Luvas</span></div>
+          </article>
+
+          <article class="min-w-[18rem] snap-start rounded-lg border border-white/8 bg-dark-900 p-5">
+            <p class="font-mono text-xs uppercase text-caution-300">Safra</p>
+            <h3 class="mt-3 font-display text-4xl leading-none text-white">COLHEITA</h3>
+            <p class="mt-4 text-sm leading-relaxed text-dark-400">Reposição organizada para equipes temporárias, turnos e áreas distantes.</p>
+            <div class="mt-5 flex flex-wrap gap-2"><span class="rounded-md bg-dark-800 px-2.5 py-1 text-xs text-dark-200">Grade</span><span class="rounded-md bg-dark-800 px-2.5 py-1 text-xs text-dark-200">Entrega</span><span class="rounded-md bg-dark-800 px-2.5 py-1 text-xs text-dark-200">Reposição</span></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="tecnica" class="relative border-y border-white/5 bg-dark-950/82 py-20 md:py-28">
+      <div class="mx-auto max-w-7xl px-6 lg:px-8">
+        <div class="grid gap-8 lg:grid-cols-[0.74fr_1.26fr] lg:items-start">
+          <div>
+            <p class="mb-4 font-mono text-xs uppercase text-supply-400">Critério técnico</p>
+            <h2 class="font-display text-5xl leading-none text-white md:text-7xl">O AMBIENTE RURAL MUDA O MATERIAL.</h2>
+            <p class="mt-5 text-base leading-relaxed text-dark-400 md:text-lg">A Supply combina tecido, proteção, EPIs e entrega conforme exposição real da equipe no campo.</p>
+          </div>
+          <div class="grid gap-4 md:grid-cols-2">
+            <article class="rounded-lg border border-white/8 bg-dark-900/72 p-6">
+              <p class="font-display text-5xl text-supply-500">UV</p>
+              <h3 class="mt-3 text-lg font-semibold text-white">Proteção solar</h3>
+              <p class="mt-3 text-sm leading-relaxed text-dark-400">Tecidos e modelagens definidos para exposição prolongada, calor e mobilidade.</p>
+            </article>
+
+            <article class="rounded-lg border border-white/8 bg-dark-900/72 p-6">
+              <p class="font-display text-5xl text-mint-300">NR31</p>
+              <h3 class="mt-3 text-lg font-semibold text-white">Rotina rural</h3>
+              <p class="mt-3 text-sm leading-relaxed text-dark-400">Composição pensada para segurança no campo, aplicação e manuseio de produtos.</p>
+            </article>
+
+            <article class="rounded-lg border border-white/8 bg-dark-900/72 p-6">
+              <p class="font-display text-5xl text-ink-300">EPI</p>
+              <h3 class="mt-3 text-lg font-semibold text-white">Complementares</h3>
+              <p class="mt-3 text-sm leading-relaxed text-dark-400">Botas, luvas, óculos e respiradores entram conforme risco químico, mecânico ou ambiental.</p>
+            </article>
+
+            <article class="rounded-lg border border-white/8 bg-dark-900/72 p-6">
+              <p class="font-display text-5xl text-white">KIT</p>
+              <h3 class="mt-3 text-lg font-semibold text-white">Entrega por turma</h3>
+              <p class="mt-3 text-sm leading-relaxed text-dark-400">Separação por função, fazenda, safra, turno ou colaborador para facilitar controle.</p>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contato" class="relative overflow-hidden py-20 md:py-28 grain sector-grid">
+      <div class="absolute inset-0 bg-dark-950/88"></div>
+      <div class="relative z-10 mx-auto max-w-5xl px-6 text-center lg:px-8">
+        <p class="mb-4 font-mono text-xs uppercase text-supply-400">Atendimento consultivo</p>
+        <h2 class="font-display text-5xl leading-none text-white md:text-7xl">ORCE PELO TIPO DE ROTINA NO CAMPO.</h2>
+        <p class="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-dark-300">Informe cultura, quantidade de colaboradores, exposição solar, uso de defensivos e EPIs necessários para cada função.</p>
+        <div class="mt-9 grid gap-3 sm:flex sm:justify-center">
+          <a href="https://wa.me/557534712333?text=Ol%C3%A1%2C%20quero%20or%C3%A7ar%20a%20linha%20de%20agronegocio%20com%20a%20Supply" target="_blank" class="inline-flex items-center justify-center gap-2 rounded-lg bg-supply-500 px-7 py-4 font-semibold text-white transition-colors hover:bg-supply-600">
+            Solicitar orçamento
+            <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+          </a>
+          <a href="https://wa.me/557534712333?text=Ol%C3%A1%2C%20quero%20falar%20com%20um%20especialista%20sobre%20agronegocio" target="_blank" class="inline-flex items-center justify-center rounded-lg border border-white/10 px-7 py-4 font-semibold text-dark-200 transition-colors hover:border-white/25 hover:text-white">Falar com especialista</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="border-t border-white/5 bg-dark-950 py-10">
+    <div class="mx-auto flex max-w-7xl flex-col items-center justify-between gap-5 px-6 text-center md:flex-row md:text-left lg:px-8">
+      <a href="index.html" class="flex items-center gap-3">
+        <img src="images/S-supply.png" alt="Supply" class="h-8 w-8 object-contain">
+        <span class="font-display text-2xl text-white">SUPPLY</span>
+      </a>
+      <p class="text-sm text-dark-500">Feira de Santana - BA | EPIs e fardamentos profissionais</p>
+    </div>
+  </footer>
+
+  <div id="mobile-cta" class="mobile-bottom-cta fixed inset-x-0 bottom-0 z-50 border-t border-white/10 bg-dark-950/96 p-4 backdrop-blur-xl md:hidden">
+    <a href="https://wa.me/557534712333?text=Ol%C3%A1%2C%20quero%20or%C3%A7ar%20a%20linha%20de%20agronegocio%20com%20a%20Supply" target="_blank" class="flex w-full items-center justify-center rounded-lg bg-supply-500 px-5 py-3.5 font-semibold text-white">Orçar agronegócio</a>
+  </div>
+
+  <script>
+    const navbar = document.getElementById('navbar');
+    const mobileCta = document.getElementById('mobile-cta');
+    function updateChrome() {
+      const scrolled = window.scrollY > 32;
+      navbar.classList.toggle('bg-dark-950/92', scrolled);
+      navbar.classList.toggle('backdrop-blur-xl', scrolled);
+      navbar.classList.toggle('border-b', scrolled);
+      navbar.classList.toggle('border-white/5', scrolled);
+      mobileCta.classList.toggle('visible', window.scrollY > 480);
+    }
+    window.addEventListener('scroll', updateChrome, { passive: true });
+    updateChrome();
+    document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+      anchor.addEventListener('click', (event) => {
+        const target = document.querySelector(anchor.getAttribute('href'));
+        if (!target) return;
+        event.preventDefault();
+        const y = target.getBoundingClientRect().top + window.scrollY - 76;
+        window.scrollTo({ top: y, behavior: 'smooth' });
+        const menu = document.getElementById('mobile-menu');
+        if (menu && !menu.classList.contains('hidden')) menu.classList.add('hidden');
+      });
+    });
+  </script>
+</body>
+</html>
