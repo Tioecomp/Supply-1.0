@@ -196,6 +196,40 @@ if (sectorCards.length > 0) {
   requestCardUpdate();
 }
 
+// --- Institutional Videos ---
+const institutionalVideoCards = document.querySelectorAll('[data-video-card]');
+
+const resetInstitutionalVideo = (card) => {
+  const video = card.querySelector('[data-video]');
+  if (!video) return;
+  video.pause();
+  video.controls = false;
+  video.load();
+  card.classList.remove('is-playing');
+};
+
+institutionalVideoCards.forEach(card => {
+  const video = card.querySelector('[data-video]');
+  const playButton = card.querySelector('[data-video-overlay]');
+  if (!video || !playButton) return;
+
+  playButton.addEventListener('click', () => {
+    institutionalVideoCards.forEach(otherCard => {
+      if (otherCard !== card) resetInstitutionalVideo(otherCard);
+    });
+    card.classList.add('is-playing');
+    video.controls = true;
+    video.play().catch(() => {
+      video.controls = false;
+      card.classList.remove('is-playing');
+    });
+  });
+
+  video.addEventListener('ended', () => {
+    resetInstitutionalVideo(card);
+  });
+});
+
 // --- Diferencial Cards Stagger ---
 const difCards = document.querySelectorAll('#diferenciais .grid > div');
 if (difCards.length > 0) {

@@ -110,6 +110,15 @@
     #setores [data-scroll-hover].is-scroll-active h3 { color: #fb923c; }
     #setores [data-scroll-hover].is-scroll-active [data-card-line] { width: 100%; }
 
+    /* Institutional video rail */
+    .video-rail { scrollbar-width: none; }
+    .video-rail::-webkit-scrollbar { display: none; }
+    [data-video-overlay] { transition: opacity 300ms ease; }
+    [data-video-card].is-playing [data-video-overlay] {
+      opacity: 0;
+      pointer-events: none;
+    }
+
     /* Selection */
     ::selection { background: #f97316; color: white; }
   </style>
@@ -133,6 +142,7 @@
 
         <!-- Nav Links (Desktop) -->
         <div class="hidden md:flex items-center gap-8">
+          <a href="#sobre" class="text-sm text-dark-300 hover:text-white transition-colors duration-300">Sobre nós</a>
           <a href="#setores" class="text-sm text-dark-300 hover:text-white transition-colors duration-300">Setores</a>
           <a href="#diferenciais" class="text-sm text-dark-300 hover:text-white transition-colors duration-300">Diferenciais</a>
           <a href="#processo" class="text-sm text-dark-300 hover:text-white transition-colors duration-300">Processo</a>
@@ -152,6 +162,7 @@
     <!-- Mobile Menu -->
     <div id="mobile-menu" class="hidden md:hidden bg-dark-900/95 backdrop-blur-xl border-t border-white/5">
       <div class="px-6 py-6 space-y-4">
+        <a href="#sobre" class="block text-dark-200 hover:text-white">Sobre nós</a>
         <a href="#setores" class="block text-dark-200 hover:text-white">Setores</a>
         <a href="#diferenciais" class="block text-dark-200 hover:text-white">Diferenciais</a>
         <a href="#processo" class="block text-dark-200 hover:text-white">Processo</a>
@@ -247,6 +258,127 @@
         <p data-animate class="font-display text-display-sm md:text-display-md lg:text-display-lg text-dark-600 leading-none mt-2">
           volta pra casa todo dia.
         </p>
+      </div>
+    </section>
+
+    <!-- ============================================ -->
+    <!-- NÚMEROS -->
+    <!-- ============================================ -->
+    <section class="border-y border-white/5 py-20">
+      <div class="mx-auto max-w-7xl px-6 lg:px-8">
+        <div class="grid grid-cols-2 gap-8 text-center md:grid-cols-4 md:gap-12">
+          <div data-animate>
+            <p class="counter font-display text-5xl text-supply-500 md:text-6xl" data-target="15">0</p>
+            <p class="mt-2 font-mono text-xs uppercase tracking-[0.15em] text-dark-400">Anos de mercado</p>
+          </div>
+          <div data-animate>
+            <p class="font-display text-5xl text-supply-500 md:text-6xl">
+              <span class="counter" data-target="500">0</span><span class="text-dark-500">+</span>
+            </p>
+            <p class="mt-2 font-mono text-xs uppercase tracking-[0.15em] text-dark-400">Empresas atendidas</p>
+          </div>
+          <div data-animate>
+            <p class="font-display text-5xl text-supply-500 md:text-6xl">
+              <span class="counter" data-target="300">0</span><span class="text-dark-500">k+</span>
+            </p>
+            <p class="mt-2 font-mono text-xs uppercase tracking-[0.15em] text-dark-400">Peças entregues/ano</p>
+          </div>
+          <div data-animate>
+            <p class="font-display text-5xl text-supply-500 md:text-6xl">ISO</p>
+            <p class="mt-2 font-mono text-xs uppercase tracking-[0.15em] text-dark-400">9001 Certificada</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================ -->
+    <!-- SOBRE / FÁBRICA -->
+    <!-- ============================================ -->
+    <section id="sobre" class="relative overflow-hidden border-y border-white/5 py-24 md:py-32">
+      <div class="absolute -left-40 top-1/3 h-96 w-96 rounded-full bg-supply-500/10 blur-3xl"></div>
+      <div class="absolute -right-40 bottom-0 h-[30rem] w-[30rem] rounded-full bg-dark-700/20 blur-3xl"></div>
+
+      <div class="relative z-10 mx-auto max-w-7xl px-6 lg:px-8">
+        <div class="grid min-w-0 grid-cols-[minmax(0,1fr)] items-start gap-14 lg:grid-cols-[0.78fr_1.22fr] lg:gap-16">
+          <div data-animate class="min-w-0 lg:sticky lg:top-32">
+            <p class="mb-4 font-mono text-xs uppercase tracking-[0.2em] text-supply-400">Por dentro da Supply</p>
+            <h2 class="font-display text-display-sm leading-none text-white md:text-display-md">ONDE TUDO<br><span class="text-supply-500">ACONTECE</span></h2>
+            <p class="mt-7 text-base leading-relaxed text-dark-300 md:text-lg">Em Feira de Santana, estrutura, equipe e controle de produção trabalham juntos para transformar cada necessidade em soluções profissionais.</p>
+            <p class="mt-4 leading-relaxed text-dark-400">Da escolha dos materiais ao corte, costura, personalização e acabamento, acompanhamos cada etapa de perto — com atenção à qualidade, ao prazo e à realidade de cada operação.</p>
+
+            <div class="mt-9 hidden grid-cols-3 gap-px overflow-hidden rounded-xl border border-white/5 bg-white/5 sm:grid">
+              <div class="bg-dark-900/90 p-4">
+                <span class="font-mono text-[10px] text-supply-400">01</span>
+                <p class="mt-2 text-xs font-medium leading-snug text-dark-200 sm:text-sm">Estrutura própria</p>
+              </div>
+              <div class="bg-dark-900/90 p-4">
+                <span class="font-mono text-[10px] text-supply-400">02</span>
+                <p class="mt-2 text-xs font-medium leading-snug text-dark-200 sm:text-sm">Produção acompanhada</p>
+              </div>
+              <div class="bg-dark-900/90 p-4">
+                <span class="font-mono text-[10px] text-supply-400">03</span>
+                <p class="mt-2 text-xs font-medium leading-snug text-dark-200 sm:text-sm">Controle de acabamento</p>
+              </div>
+            </div>
+
+            <a href="#setores" class="mt-8 inline-flex items-center gap-3 font-medium text-white transition-colors hover:text-supply-400">
+              Conhecer nossas soluções
+              <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+            </a>
+          </div>
+
+          <div class="min-w-0 max-w-full">
+            <div class="mb-4 flex items-center justify-between sm:hidden">
+              <p class="font-mono text-[10px] uppercase tracking-[0.18em] text-dark-500">Deslize para assistir</p>
+              <div class="flex gap-1.5" aria-hidden="true">
+                <span class="h-1.5 w-6 rounded-full bg-supply-500"></span>
+                <span class="h-1.5 w-1.5 rounded-full bg-dark-700"></span>
+              </div>
+            </div>
+
+            <div class="video-rail -mx-6 flex min-w-0 snap-x snap-mandatory gap-5 overflow-x-auto px-6 pb-3 sm:mx-0 sm:grid sm:grid-cols-2 sm:overflow-visible sm:px-0 sm:pb-0">
+              <article data-animate data-video-card class="min-w-[82vw] snap-center overflow-hidden rounded-2xl border border-white/10 bg-dark-900 shadow-2xl shadow-dark-950/40 sm:min-w-0">
+                <div class="relative aspect-[9/16] overflow-hidden bg-dark-950">
+                  <video data-video class="h-full w-full object-cover" playsinline preload="none" poster="images/home/fabrica-producao-poster.jpg">
+                    <source src="videos/fabrica-supply-producao.mp4" type="video/mp4">
+                    Seu navegador não suporta reprodução de vídeo.
+                  </video>
+                  <button type="button" data-video-overlay aria-label="Reproduzir vídeo da produção da Supply" class="absolute inset-0 flex flex-col items-center justify-center bg-gradient-to-t from-dark-950/75 via-dark-950/10 to-dark-950/20">
+                    <span class="flex h-16 w-16 items-center justify-center rounded-full border border-white/25 bg-dark-950/70 text-white shadow-xl backdrop-blur-md transition-all duration-300 hover:scale-110 hover:border-supply-500/60 hover:bg-supply-500">
+                      <svg class="ml-1 h-6 w-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
+                    </span>
+                    <span class="mt-4 font-mono text-[10px] uppercase tracking-[0.2em] text-white">Assistir · 00:30</span>
+                  </button>
+                </div>
+                <div class="p-5">
+                  <p class="font-mono text-[10px] uppercase tracking-[0.18em] text-supply-400">Nossa fábrica</p>
+                  <h3 class="mt-2 font-display text-2xl text-white">PRODUÇÃO EM MOVIMENTO</h3>
+                  <p class="mt-2 text-sm leading-relaxed text-dark-400">Máquinas, técnica e cuidado em cada etapa.</p>
+                </div>
+              </article>
+
+              <article data-animate data-video-card class="min-w-[82vw] snap-center overflow-hidden rounded-2xl border border-white/10 bg-dark-900 shadow-2xl shadow-dark-950/40 sm:min-w-0">
+                <div class="relative aspect-[9/16] overflow-hidden bg-dark-950">
+                  <video data-video class="h-full w-full object-cover" playsinline preload="none" poster="images/home/fabrica-estrutura-poster.jpg">
+                    <source src="videos/fabrica-supply-estrutura.mp4" type="video/mp4">
+                    Seu navegador não suporta reprodução de vídeo.
+                  </video>
+                  <button type="button" data-video-overlay aria-label="Reproduzir vídeo da estrutura da Supply" class="absolute inset-0 flex flex-col items-center justify-center bg-gradient-to-t from-dark-950/75 via-dark-950/10 to-dark-950/20">
+                    <span class="flex h-16 w-16 items-center justify-center rounded-full border border-white/25 bg-dark-950/70 text-white shadow-xl backdrop-blur-md transition-all duration-300 hover:scale-110 hover:border-supply-500/60 hover:bg-supply-500">
+                      <svg class="ml-1 h-6 w-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
+                    </span>
+                    <span class="mt-4 font-mono text-[10px] uppercase tracking-[0.2em] text-white">Assistir · 00:47</span>
+                  </button>
+                </div>
+                <div class="p-5">
+                  <p class="font-mono text-[10px] uppercase tracking-[0.18em] text-supply-400">Do material ao acabamento</p>
+                  <h3 class="mt-2 font-display text-2xl text-white">ESTRUTURA QUE ENTREGA</h3>
+                  <p class="mt-2 text-sm leading-relaxed text-dark-400">Materiais e processos orientados por qualidade e prazo.</p>
+                </div>
+              </article>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -456,37 +588,6 @@
       </div>
     </section>
 
-    <!-- ============================================ -->
-    <!-- NÚMEROS -->
-    <!-- ============================================ -->
-    <section class="py-20 border-y border-white/5">
-      <div class="max-w-7xl mx-auto px-6 lg:px-8">
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12 text-center">
-          <div data-animate>
-            <p class="font-display text-5xl md:text-6xl text-supply-500 counter" data-target="15">0</p>
-            <p class="font-mono text-xs uppercase tracking-[0.15em] text-dark-400 mt-2">Anos de mercado</p>
-          </div>
-          <div data-animate>
-            <p class="font-display text-5xl md:text-6xl text-supply-500">
-              <span class="counter" data-target="500">0</span><span class="text-dark-500">+</span>
-            </p>
-            <p class="font-mono text-xs uppercase tracking-[0.15em] text-dark-400 mt-2">Empresas atendidas</p>
-          </div>
-          <div data-animate>
-            <p class="font-display text-5xl md:text-6xl text-supply-500">
-              <span class="counter" data-target="300">0</span><span class="text-dark-500">k+</span>
-            </p>
-            <p class="font-mono text-xs uppercase tracking-[0.15em] text-dark-400 mt-2">Peças entregues/ano</p>
-          </div>
-          <div data-animate>
-            <p class="font-display text-5xl md:text-6xl text-supply-500">ISO</p>
-            <p class="font-mono text-xs uppercase tracking-[0.15em] text-dark-400 mt-2">9001 Certificada</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ============================================ -->
     <!-- PROCESSO -->
     <!-- ============================================ -->
     <section id="processo" class="relative py-24 md:py-32">
@@ -671,7 +772,7 @@
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/gsap.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/ScrollTrigger.min.js"></script>
 
-  <script src="app.js?v=20260715-2"></script>
+  <script src="app.js?v=20260717-2"></script>
 
 </body>
 </html>
